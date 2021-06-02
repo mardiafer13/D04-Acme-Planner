@@ -163,8 +163,10 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload2");
 			} else if(parteDecimal<0 || parteDecimal>=60) {
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload2");
-			} else if (entity.getPeriodInitial() == null || entity.getPeriodFinal() == null || workloadInMinutes > (entity.durationPeriodInMinutes())) {
+			} else if (entity.getPeriodInitial()!=null && entity.getPeriodFinal()!=null && workloadInMinutes > (entity.durationPeriodInMinutes())) {
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload");
+			} else if(entity.getPeriodInitial()==null || entity.getPeriodFinal() == null) {
+				errors.state(request,  false, "workloadInHours", "manager.message.form.error.workload3");
 			}
 		}
 
