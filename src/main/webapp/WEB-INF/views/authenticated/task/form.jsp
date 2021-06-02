@@ -17,7 +17,7 @@
 
 <acme:form readonly="true">
 	<acme:form-textbox code="authenticated.task.form.label.title" path="title"/>
-	<acme:form-textbox code="authenticated.task.form.label.description" path="description"/>
+	<acme:form-textarea code="authenticated.task.form.label.description" path="description"/>
 	<acme:form-textbox code="authenticated.task.form.label.initial" path="periodInitial"/>
 	<acme:form-textbox code="authenticated.task.form.label.end" path="periodFinal"/>
 	<acme:form-textbox code="authenticated.task.form.label.workload" path="workloadInHours"/>

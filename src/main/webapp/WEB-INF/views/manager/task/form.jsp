@@ -17,7 +17,7 @@
 
 <acme:form>
 	<acme:form-textbox code="manager.task.form.label.title" path="title"/>
-	<acme:form-textbox code="manager.task.form.label.description" path="description"/>
+	<acme:form-textarea code="manager.task.form.label.description" path="description"/>
 	<acme:form-moment code="manager.task.form.label.initial" path="periodInitial"/>
 	<acme:form-moment code="manager.task.form.label.end" path="periodFinal"/>
 	<acme:form-double code="manager.task.form.label.workloadInHours" path="workloadInHours"/>
