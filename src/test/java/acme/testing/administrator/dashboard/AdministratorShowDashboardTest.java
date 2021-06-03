@@ -28,12 +28,12 @@ public class AdministratorShowDashboardTest extends AcmePlannerTest {
 		By locatorNumberPublicTasks;
 		locatorNumberPublicTasks = By.xpath("/html/body/div[2]/div/table/tbody/tr[1]/td");
 		final WebElement numberPublicTasks = this.driver.findElement(locatorNumberPublicTasks);
-		Assertions.assertEquals("9.00", numberPublicTasks.getText());
+		Assertions.assertEquals("11.00", numberPublicTasks.getText());
 
 		final By locatorNumberPrivateTask;
 		locatorNumberPrivateTask = By.xpath("/html/body/div[2]/div/table/tbody/tr[2]/td");
 		final WebElement numberPrivateTask = this.driver.findElement(locatorNumberPrivateTask);
-		Assertions.assertEquals("3.00", numberPrivateTask.getText());
+		Assertions.assertEquals("1.00", numberPrivateTask.getText());
 
 		By locatorNumberFinalTask;
 		locatorNumberFinalTask = By.xpath("/html/body/div[2]/div/table/tbody/tr[3]/td");

@@ -174,7 +174,7 @@
 			value="I have to finish developing my application" />
 		<property name="link" value="http://www.sample-app.com" />
 		<property name="manager" ref="managerManager" />
-		<property name="isPublic" value="false" />
+		<property name="isPublic" value="true" />
 
 		<property name="workloadInHours" value="0.24" />
 	</bean>
@@ -196,7 +196,7 @@
 		<property name="description"
 			value="I have to clean the car" />
 		<property name="link" value="http://lavaderosSevilla.com" />
-		<property name="isPublic" value="false" />
+		<property name="isPublic" value="true" />
 		<property name="workloadInHours" value="0.14" />
 		<property name="manager" ref="managerManager" />
 
