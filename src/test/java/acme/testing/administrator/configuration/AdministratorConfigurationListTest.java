@@ -7,6 +7,14 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import acme.testing.AcmePlannerTest;
 
 public class AdministratorConfigurationListTest extends AcmePlannerTest {
+	
+	/*
+	 * En este test se va comprobar si un administrador puede 
+	 * acceder a la lista de palabras spam
+	 * 
+	 * Lo esperado es que las palabras spam del listado
+	 * coincidan con las establecidas en el archivo csv.
+	 */
 
 	
 	@ParameterizedTest

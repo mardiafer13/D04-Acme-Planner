@@ -196,7 +196,7 @@ Task
 + /workloadInMinutes: Double {NotNull,Min={0}}
 + /durationPeriodInHours: Long
 + /durationPeriodInMinutes: Long
-+ description: String {NotBlank, Length(0, 500)}
++ description: String {NotBlank, Length(0, 500), Column(length=512}
 + link: String {URL}
 + isPublic: Boolean {NotNull}</panel_attributes>
     <additional_attributes/>

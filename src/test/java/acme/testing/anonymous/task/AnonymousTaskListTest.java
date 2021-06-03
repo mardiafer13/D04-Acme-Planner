@@ -8,6 +8,13 @@ import acme.testing.AcmePlannerTest;
 
 public class AnonymousTaskListTest extends AcmePlannerTest{
 
+	/*
+	 * En este test se va comprobar si cualquier anonimo puede 
+	 * acceder a la lista de las tareas no finalizadas
+	 * 
+	 * Lo esperado es que las tasks del listado
+	 * coincidan con las establecidas en el archivo csv.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/task/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
