@@ -4,12 +4,20 @@ package acme.testing.administrator.dashboard;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import acme.testing.AcmePlannerTest;
 
 public class AdministratorShowDashboardTest extends AcmePlannerTest {
+	
+	/*
+	 * En este test se va comprobar que un administrador pueda acceder a su dashboard 
+	 * y comprobamos si las estadisticas coinciden con los cálculos
+	 * de las tasks creadas.
+	 */
 
 	@Test
 	@Order(30)
@@ -20,12 +28,12 @@ public class AdministratorShowDashboardTest extends AcmePlannerTest {
 		By locatorNumberPublicTasks;
 		locatorNumberPublicTasks = By.xpath("/html/body/div[2]/div/table/tbody/tr[1]/td");
 		final WebElement numberPublicTasks = this.driver.findElement(locatorNumberPublicTasks);
-		Assertions.assertEquals("11.00", numberPublicTasks.getText());
+		Assertions.assertEquals("9.00", numberPublicTasks.getText());
 
 		final By locatorNumberPrivateTask;
 		locatorNumberPrivateTask = By.xpath("/html/body/div[2]/div/table/tbody/tr[2]/td");
 		final WebElement numberPrivateTask = this.driver.findElement(locatorNumberPrivateTask);
-		Assertions.assertEquals("1.00", numberPrivateTask.getText());
+		Assertions.assertEquals("3.00", numberPrivateTask.getText());
 
 		By locatorNumberFinalTask;
 		locatorNumberFinalTask = By.xpath("/html/body/div[2]/div/table/tbody/tr[3]/td");
@@ -78,14 +86,20 @@ public class AdministratorShowDashboardTest extends AcmePlannerTest {
 		Assertions.assertEquals("11.25", maximumWorkloadTasks.getText());
 
 	}
+	/*
+	 * Testeamos que ni un manager ni un empleado
+	 * puedan acceder a la dashboard 
+	 * del administrador mediante su url.
+	 */
 
-	@Test
+	@ParameterizedTest
+	@CsvFileSource(resources = "/administrator/dashboard/dashboard-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void managerDashboardNegative() {
+	public void managerDashboardNegative(final String user, final String password) {
 
-		super.signIn("manager1", "manager1");
+		super.signIn(user, password);
 
-		super.driver.get(super.baseUrl + "/administrator/dashboard/show");
+		super.navigate("/administrator/dashboard/show",null);
 		super.checkPanicExists();
 
 		super.signOut();

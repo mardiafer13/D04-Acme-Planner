@@ -8,6 +8,11 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import acme.testing.AcmePlannerTest;
 
 public class AnonymousShoutCreateTest extends AcmePlannerTest {
+	
+	/*
+	 * En este test se va comprobar si cualquier anónimo puede crear un shout
+	 * y comprobar que se ha creado correctamente.
+	 */
 
 	
 	@ParameterizedTest
@@ -34,6 +39,17 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		super.checkColumnHasValue(recordIndex, 3, info);
 		
 	}
+	
+	/*
+	 * En este test se va comprobar si cualquier anónimo no puede crear un shout
+	 * se imponen las siguientes restricciones:
+	 * 	-El campo autor debe contener entre 5 y 25 palabras
+	 * 	-El campo autor no puede contener palabras spam
+	 * 	-El campo autor no puede estar vacío
+	 * 	-El campo texto no puede contener palabras spam
+	 * 	-El campo texto no puede estar vacío
+	 * 	-El campo texto puede contener como máximo 100 caracteres
+	 */
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)

@@ -8,10 +8,15 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import acme.testing.AcmePlannerTest;
 
 public class ManagerTaskCreateTest extends AcmePlannerTest {
+	
+	/*
+	 * En este test se va comprobar si un manager puede crear una tarea
+	 * y comprobar que se ha creado correctamente.
+	 */
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
+	@Order(20)
 	public void createPositive(final int recordIndex, final String title, final String description, final String periodInitial, final String periodFinal, final String workloadInHours, final String Link, final Boolean isPublic) {
 
 		// Accedemos como manager
@@ -19,8 +24,7 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 
 		// Accedemos al formulario de crear una tarea
 		super.clickOnMenu("Manager", "Create a task");
-		
-		super.checkNotPanicExists();
+
 
 		// Añadimos los valores
 		super.fillInputBoxIn("title", title);
@@ -55,6 +59,21 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 		super.checkInputBoxHasValue("isPublic", String.valueOf(isPublic));
 
 	}
+	
+	/*
+	 * En este test se va comprobar si un manager no puede crear una tarea
+	 * se imponen las siguientes restricciones:
+	 * 	-Cualquier campo no puede estar vacío
+	 * 	-El campo titulo no puede contener palabras spam
+	 * 	-El campo descripcion no puede contener palabras spam
+	 * 	-La fecha de inicio no puede ser anterior al dia de hoy
+	 *  -La fecha de inicio no puede ser posterior a la fecha de fin
+	 *  -La fecha de fin no puede ser anterior a la fecha de inicio
+	 *  -El wokload no puede ser mas grande que la diferencia entre las 2 fechas
+	 *  -El wokload no puede ser negativo
+	 *  -El wokload no puede tener mas de 2 cifras decimales
+	 *  -El campo link debe tener un patron URL
+	 */
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
