@@ -14,6 +14,7 @@ package acme.features.manager.task;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,7 +110,15 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		if (entity.getPeriodFinal() != null && entity.getPeriodInitial() != null && entity.getPeriodFinal().before(entity.getPeriodInitial())) {
 			errors.state(request, false, "periodFinal", "manager.message.form.error.date2");
 		}
-		
+		final Date date = new Date();
+
+		if (entity.getPeriodInitial() != null && entity.getPeriodInitial().before(date)) {
+			errors.state(request, false, "periodInitial", "manager.message.form.error.date3");
+		}
+
+		if (entity.getPeriodFinal() != null && entity.getPeriodFinal().before(date)) {
+			errors.state(request, false, "periodFinal", "manager.message.form.error.date3");
+		}
 		if (entity.getPeriodFinal()!=null && entity.getPeriodInitial()!=null && entity.getWorkloadInHours() != null) {
 			final double number = entity.getWorkloadInHours();
 			final String str = String.format("%.2f", number);
@@ -124,8 +133,10 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload2");
 			} else if(parteDecimal<0 || parteDecimal>=60) {
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload2");
-			} else if (entity.getPeriodInitial() == null || entity.getPeriodFinal() == null || workloadInMinutes > (entity.durationPeriodInMinutes())) {
+			} else if (entity.getPeriodInitial() != null && entity.getPeriodFinal() != null && workloadInMinutes > (entity.durationPeriodInMinutes())) {
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload");
+			} else if(entity.getPeriodInitial()==null || entity.getPeriodFinal() == null) {
+				errors.state(request,  false, "workloadInHours", "manager.message.form.error.workload3");
 			}
 		}
 

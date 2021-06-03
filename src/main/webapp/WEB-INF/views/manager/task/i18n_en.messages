@@ -27,7 +27,9 @@ manager.message.form.error.date3 = Date cannot be before today
 manager.message.form.error.date4 = Invalid date
 manager.message.form.error.workload = Workload cannot be higher than dates difference
 manager.message.form.error.workload2 = Workload minutes must be between 0 and 59
-manager.message.form.error.workload3 = Workload has more than 2 decimal digits
+manager.message.form.error.workload3 = Enter valid dates
+manager.message.form.error.workload4 = Workload has more than 2 decimal digits
+
  
 
 manager.task.list.label.initial = Begin
