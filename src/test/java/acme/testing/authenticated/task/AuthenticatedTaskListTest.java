@@ -13,7 +13,7 @@ public class AuthenticatedTaskListTest extends AcmePlannerTest {
 
 	// En este test se va comprobar que se listan correctamente todas las tareas públicas y finalizadas de un usuario autenticado.
 	// Lo esperado es que cada un de los campos de una tarea coincidan con los establecidos en el archivo csv.
-	
+
 	@ParameterizedTest
 	@CsvFileSource(resources = "/authenticated/task/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -43,6 +43,17 @@ public class AuthenticatedTaskListTest extends AcmePlannerTest {
 
 		// Cerramos sesion
 		super.signOut();
+
+	}
+
+	@ParameterizedTest
+	@CsvFileSource(resources = "/manager/task/deleteNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(10)
+	public void listNegativeAuthenticated(final int recordIndex, final String title, final String description, final String periodInitial, final String periodFinal, final String workloadInHours, final String link, final Boolean isPublic) {
+
+		this.driver.get("localhost:8080/Acme-Planner/authenticated/task/list-public-finished");
+		
+		super.checkPanicExists();
 
 	}
 }

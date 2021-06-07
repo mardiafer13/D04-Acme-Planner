@@ -33,7 +33,7 @@ public class Task extends DomainEntity{
 	// Attributes -------------------------------------------------------------
 	
 	@NotBlank  
-	@Length(min=0, max=80)
+	@Length(min=1, max=80)
 	protected String         title;
 	
 	

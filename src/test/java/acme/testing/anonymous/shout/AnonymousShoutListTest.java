@@ -30,4 +30,19 @@ public class AnonymousShoutListTest extends AcmePlannerTest{
 		super.checkColumnHasValue(recordIndex, 3, info);
 		
 	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/administrator/dashboard/dashboard-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(10)
+	public void listAnonymousNegative(final String user, final String password) {
+
+		super.signIn(user, password);
+
+		this.driver.get("localhost:8080/Acme-Planner/anonymous/shout/list-recent");
+		super.checkPanicExists();
+
+		super.signOut();
+	}
+	
+	
 }
