@@ -49,7 +49,7 @@ public class Dashboard implements Serializable {
 	Double						maximumWorkloadTasks;
 	
 	//ControlCheck
-	Double						numberOfCheckPrimero;
+	Double						numberOfPrimero;
 	Double						numberOfSegundo;
 	Double						averageMoney;
 	Double						deviationMoney;
