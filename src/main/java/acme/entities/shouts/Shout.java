@@ -24,14 +24,14 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.framework.entities.DomainEntity;
+import acme.entities.controlCheck.ControlCheck;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Shout extends DomainEntity {
+public class Shout extends ControlCheck {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -54,11 +54,10 @@ public class Shout extends DomainEntity {
 	
 	@URL
 	protected String			info;
-	
-	protected String			adjunto;//cambiar adjunto y tmb el view
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
+//	@OneToOne
+//	ControlCheck controlCheck;
 }

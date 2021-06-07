@@ -19,6 +19,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.configuration.Configuration;
+import acme.entities.controlCheck.ControlCheck;
 import acme.entities.shouts.Shout;
 import acme.framework.repositories.AbstractRepository;
 
@@ -34,4 +35,6 @@ public interface AnonymousShoutRepository extends AbstractRepository {
 	@Query("select c from Configuration c")
 	List<Configuration> findManySpamWord();
 
+	@Query("select cr from ControlCheck cr where cr.id=?1")
+	ControlCheck findControlCheckById(int id);
 }

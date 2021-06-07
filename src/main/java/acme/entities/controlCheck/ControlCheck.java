@@ -14,15 +14,14 @@ package acme.entities.controlCheck;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 
-import acme.entities.shouts.Shout;
+import org.hibernate.validator.constraints.Range;
+
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -37,18 +36,18 @@ public class ControlCheck extends DomainEntity {
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@Past
-	@NotNull
-	protected Date				moment;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
+	@NotNull
+	protected Date				momento;
+	
+	@Column(unique=true)
+	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	protected Date				date;
 	
-	@NotBlank
+	@NotNull
+	@Range(min = 0)
 	protected Double			money;
 
 	@NotNull
@@ -58,6 +57,4 @@ public class ControlCheck extends DomainEntity {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-	@OneToOne
-	Shout shout;
 }

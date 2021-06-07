@@ -66,23 +66,23 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	Double maximumWorkloadTasks();
 	
 	
-	//ControlCheck
-	@Query("select c from ControlCheck c")
-	Collection<Task> findControlCheck();
-	
-	@Query("select 1.0 * count(c) from ControlCheck c  where c.isCheck= 1")
-	Double numberOfCheckPrimeroTrue();
-	
-	@Query("select 1.0 * count(c) from ControlCheck c  where t.isCheck = 0")
-	Double numberOfCheckPrimeroFalse();
-	
-	@Query("select 1.0 * count(c.segundo) from ControlCheck c")
-	Double numberOfSegundo();
-	
-	@Query("select avg(c.money) from ControlCheck c")
-	Double averageMoney();
-	
-	@Query("select stddev(c.money) from ControlCheck c")
-	Double deviationMoney();
+//	//ControlCheck
+//	@Query("select c from ControlCheck c")
+//	Collection<Task> findControlCheck();
+//	
+//	@Query("select 1.0 * count(c) from ControlCheck c  where c.isCheck= 1")
+//	Double numberOfCheckPrimeroTrue();
+//	
+//	@Query("select 1.0 * count(c) from ControlCheck c  where t.isCheck = 0")
+//	Double numberOfCheckPrimeroFalse();
+//	
+//	@Query("select 1.0 * count(c.segundo) from ControlCheck c")
+//	Double numberOfSegundo();
+//	
+//	@Query("select avg(c.money) from ControlCheck c")
+//	Double averageMoney();
+//	
+//	@Query("select stddev(c.money) from ControlCheck c")
+//	Double deviationMoney();
 
 }

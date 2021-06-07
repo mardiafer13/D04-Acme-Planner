@@ -65,21 +65,26 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "author", "text", "info", "adjunto");//cambiar adjunto y tmb el view
+		request.unbind(entity, model, "author", "text", "info", "date", "money", "isCheck");//cambiar adjunto y tmb el view
 	}
 
 	@Override
 	public Shout instantiate(final Request<Shout> request) {
 		assert request != null;
-
+		
 		
 		Shout result;
 		Date moment;
 
+//		final ControlCheck controlCheck = new ControlCheck();		
+		
 		moment = new Date(System.currentTimeMillis() - 1);
 
 		result = new Shout();
+		
 		result.setMoment(moment);
+		result.setMomento(moment);
+//		result.setControlCheck(controlCheck);
 
 		return result;
 	}
@@ -93,6 +98,8 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
         final List<Configuration> sp = this.repository.findManySpamWord();
         final List<Configuration> lsp = new ArrayList<>();
         lsp.addAll(sp);
+        
+//        entity.setControlCheck(null);
         
         for (int i = 0; i < lsp.size(); i++) {
             if(lsp.get(i).isSpam(entity.getText())){
@@ -110,11 +117,23 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	public void create(final Request<Shout> request, final Shout entity) {
 		assert request != null;
 		assert entity != null;
-
+		
+		
+//		final int controlId = entity.getControlCheck().getId();
+//		final ControlCheck control = this.repository.findControlCheckById(controlId);
+		final boolean confirmation = request.getModel().getBoolean("isCheck");
+		
+//		control.setIsCheck(confirmation);
+//		control.setMoment(new Date(System.currentTimeMillis() - 1));		
+		
+		entity.setIsCheck(confirmation);
+		
 		Date moment;
 
 		moment = new Date(System.currentTimeMillis() - 1);
+		entity.setMomento(moment);
 		entity.setMoment(moment);
+//		entity.setControlCheck(control);
 		this.repository.save(entity);
 	}
 
