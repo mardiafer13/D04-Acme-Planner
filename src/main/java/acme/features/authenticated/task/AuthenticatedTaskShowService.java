@@ -36,7 +36,13 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
 
-		return true;
+		final Task tarea = this.findOne(request);
+		final Boolean isPublic = tarea.getIsPublic();
+		if(isPublic) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 	@Override
@@ -57,6 +63,7 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneTaskById(id);
+		
 
 		return result;
 	}
