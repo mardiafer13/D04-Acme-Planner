@@ -7,6 +7,15 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import acme.testing.AcmePlannerTest;
 
 public class AdministratorConfigurationUpdateTest extends AcmePlannerTest{
+	/*
+	 * 	En este test se va comprobar si un administrador puede actualizar una 
+	 * 	palabra spam, así como su threshold
+	 * 
+	 *  El resultado esperado es que cada una de las palabras spam
+	 *  se hayan editado correctamente con los valores establecidos
+	 *	en el archivo csv.
+	 */
+	
 
 	
 	@ParameterizedTest
@@ -35,6 +44,15 @@ public class AdministratorConfigurationUpdateTest extends AcmePlannerTest{
 		// Cerramos sesión
 		super.signOut();
 	}
+	/*
+	 * Testeamos si un administrador no puede actualizar una palabra spam
+	 * se imponen las siguientes restricciones:
+	 * 	-El campo spam no puede estar vacío
+	 * 	-El campo spam no puede ser nulo
+	 * 	-Threshold no puede ser menor que 0
+	 * 	-Threshold no puede ser mayor que 1
+	 */
+	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/configuration/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
