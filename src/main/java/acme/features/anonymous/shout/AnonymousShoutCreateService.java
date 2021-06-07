@@ -65,7 +65,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "author", "text", "info");
+		request.unbind(entity, model, "author", "text", "info", "adjunto");//cambiar adjunto y tmb el view
 	}
 
 	@Override

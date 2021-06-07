@@ -52,13 +52,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, //
-			"averageNumberOfJobsPerEmployer", "averageNumberOfApplicationsPerWorker", // 
-			"avegageNumberOfApplicationsPerEmployer", "ratioOfPendingApplications", //
-			"ratioOfRejectedApplications", "ratioOfAcceptedApplications",
-			"numberPublicTask", "numberPrivateTask", "numberFinalTask", 
-			"numberNoFinalTask","averageDurationPeriodTasks","deviationDurationPeriodTasks","minimumDurationPeriodTasks","maximumDurationPeriodTasks",
-			"averageWorkloadTasks","deviationWorkloadTasks","minimumWorkloadTasks","maximumWorkloadTasks");
+		request.unbind(entity, model, "numberOfCheckPrimero", "numberOfSegundo", "averageMoney", "deviationMoney");
 	}
 
 	@Override
@@ -72,7 +66,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Double ratioOfPendingApplications;
 		Double ratioOfAcceptedApplications;
 		Double ratioOfRejectedApplications;
-		
+		final Double numberOfCheckPrimero;
+		final Double numberOfSegundo;
+		final Double averageMoney;
+		final Double deviationMoney;
 		
 		
 		final Double numberPublicTask;
