@@ -48,6 +48,14 @@ public class Dashboard implements Serializable {
 	Double						minimumWorkloadTasks;
 	Double						maximumWorkloadTasks;                   
 	
+	//Esto es para la tabla relacionado con los shouts
+		Double						ratioAtributo4True;
+		Double						ratioAtributo4False;
+		Double 						ratioOfShoutsYear2020;
+		Double 						averageMoneda1;
+		Double 						averageMoneda2;
+		Double 						deviationMoneda1;
+		Double						deviationMoneda2;
 
 	// Derived attributes -----------------------------------------------------
 

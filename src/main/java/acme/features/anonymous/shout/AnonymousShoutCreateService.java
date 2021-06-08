@@ -20,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.configuration.Configuration;
+import acme.entities.entidad1.Entidad1;
 import acme.entities.shouts.Shout;
 import acme.features.administrator.Configuration.AdministratorConfigurationRepository;
 import acme.framework.components.Errors;
@@ -72,14 +73,18 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	public Shout instantiate(final Request<Shout> request) {
 		assert request != null;
 
-		
 		Shout result;
 		Date moment;
+		Entidad1 entidad;
 
 		moment = new Date(System.currentTimeMillis() - 1);
-
+		entidad = new Entidad1();
+		
+		//entidad.setInfoStamp(moment);
+		
 		result = new Shout();
 		result.setMoment(moment);
+		result.setEntidad1(entidad);
 
 		return result;
 	}
@@ -115,6 +120,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
+		this.repository.save(entity.getEntidad1());
 		this.repository.save(entity);
 	}
 

@@ -118,8 +118,68 @@
 			<acme:print value="${maximumWorkloadTasks}"/>
 		</td>
 	</tr>
-	<%-- Parte de entregable fin--%>
+	<%-- Parte de SHOUTS--%>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.ratioAtributo4True"/>
+		</th>
+		<td>
+			<acme:print value="${ratioAtributo4True}"/>
+		</td>
+	</tr>
 	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.ratioAtributo4False"/>
+		</th>
+		<td>
+			<acme:print value="${ratioAtributo4False}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.ratioOfShoutsYear2020"/>
+		</th>
+		<td>
+			<acme:print value="${ratioOfShoutsYear2020}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.averageMoneda1"/>
+		</th>
+		<td>
+			<acme:print value="${averageMoneda1}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.averageMoneda2"/>
+		</th>
+		<td>
+			<acme:print value="${averageMoneda2}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviationMoneda1"/>
+		</th>
+		<td>
+			<acme:print value="${deviationMoneda1}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviationMoneda2"/>
+		</th>
+		<td>
+			<acme:print value="${deviationMoneda2}"/>
+		</td>
+	</tr>
 	
 </table>
 

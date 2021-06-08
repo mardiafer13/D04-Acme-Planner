@@ -58,7 +58,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			"ratioOfRejectedApplications", "ratioOfAcceptedApplications",
 			"numberPublicTask", "numberPrivateTask", "numberFinalTask", 
 			"numberNoFinalTask","averageDurationPeriodTasks","deviationDurationPeriodTasks","minimumDurationPeriodTasks","maximumDurationPeriodTasks",
-			"averageWorkloadTasks","deviationWorkloadTasks","minimumWorkloadTasks","maximumWorkloadTasks");
+			"averageWorkloadTasks","deviationWorkloadTasks","minimumWorkloadTasks","maximumWorkloadTasks","ratioAtributo4True","ratioAtributo4False","ratioOfShoutsYear2020", "averageMoneda1", "averageMoneda2", "deviationMoneda1" ,"deviationMoneda2");
 	}
 
 	@Override
@@ -73,7 +73,46 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Double ratioOfAcceptedApplications;
 		Double ratioOfRejectedApplications;
 		
+		//Shouts
+		Double ratioAtributo4True;
+		Double ratioAtributo4False;
+		Double ratioOfShoutsYear2020;
+		Double averageModeda1;
+		Double averageModeda2;
+		Double deviationMoneda1;
+		Double desviacionMoneda2;
 		
+		ratioAtributo4True = this.repository.ratioOfShoutsAtributo3True();
+		ratioAtributo4False = this.repository.ratioOfShoutsAtributo3False();
+		ratioOfShoutsYear2020 = this.repository.ratioOfShoutsYear2020();
+		final List<Double> averages= this.repository.averageEntidad1GroupByCurrency();
+		final List<Double> deviations = this.repository.deviationEntidad1GroupByCurrency();
+		
+	
+       
+        if(averages.size()==2) {
+        	averageModeda1 = averages.get(0);
+        	averageModeda2 = averages.get(1);
+        } else if(averages.size()<=1 && averages.size()>0) {
+        	averageModeda1 = averages.get(0);
+            averageModeda2 = 0.0;
+        } else {
+        	averageModeda1 = 0.0;
+            averageModeda2 = 0.0;
+        }
+
+        if(deviations.size()==2) {
+        	deviationMoneda1 = deviations.get(0);
+        	desviacionMoneda2 = deviations.get(1);
+        } else if(deviations.size()<=1 && deviations.size()>0) {
+        	deviationMoneda1 = deviations.get(0);
+        	desviacionMoneda2 = 0.0;
+        } else {
+        	deviationMoneda1 = 0.0;
+        	desviacionMoneda2 = 0.0;
+        }
+		
+		//
 		
 		final Double numberPublicTask;
 		final Double numberPrivateTask;
@@ -176,6 +215,17 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMaximumWorkloadTasks(maximumWorkloadTasks);
 		result.setMinimumWorkloadTasks(minimumWorkloadTasks);
 
+		//shouts
+		result.setRatioAtributo4True(ratioAtributo4True);
+		result.setRatioAtributo4False(ratioAtributo4False);
+		result.setAverageMoneda1(averageModeda1);
+		result.setAverageMoneda2(averageModeda2);
+		result.setRatioOfShoutsYear2020(ratioOfShoutsYear2020);
+		result.setDeviationMoneda1(deviationMoneda1);
+		result.setDeviationMoneda2(desviacionMoneda2);
+		
+		
+		
 		return result;
 	}
 	private static double ponerMinutosSobre60(final Double numero) {
