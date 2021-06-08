@@ -1,3 +1,0 @@
-timestamp,test-class,test-method,time,description,result
-2021-06-08 16:01:08.924,acme.testing.manager.task.ManagerTaskListTest,listManagerNegative,30628,"[1] ",Cannot find 'By.xpath: //div[@id='mainMenu']/ul/li/a[normalize-space()='Sign out']'
-2021-06-08 16:01:39.87,acme.testing.manager.task.ManagerTaskListTest,listManagerNegative,30589,"[2] ",Cannot find 'By.xpath: //div[@id='mainMenu']/ul/li/a[normalize-space()='Sign out']'

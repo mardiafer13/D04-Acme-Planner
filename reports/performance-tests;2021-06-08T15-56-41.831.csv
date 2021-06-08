@@ -1,4 +1,0 @@
-timestamp,test-class,test-method,time,description,result
-2021-06-08 15:56:59.574,acme.testing.manager.task.ManagerTaskListTest,taskShowServiceTest,6716,"[1] recordIndex=0, title=Clean my house, description=I have to clean my house, periodInitial=2021/02/01 12:30, periodFinal=2021/02/01 13:30, workloadInHours=1.00, Link=null",OK
-2021-06-08 15:57:06.723,acme.testing.manager.task.ManagerTaskListTest,taskShowServiceTest,6879,"[2] recordIndex=1, title=Study the math exam, description=I have to study the math exam, periodInitial=2021/02/11 12:30, periodFinal=2021/02/28 12:30, workloadInHours=11.25, Link=null",OK
-2021-06-08 15:57:15.212,acme.testing.manager.task.ManagerTaskListTest,taskShowServiceTest,8185,"[3] recordIndex=2, title=Clean my car, description=I have to clean my car, periodInitial=2021/03/01 12:30, periodFinal=2021/03/01 12:45, workloadInHours=0.10, Link=http://lavaderos.com",Timeout waiting for action to complete

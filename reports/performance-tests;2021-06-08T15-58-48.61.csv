@@ -1,2 +1,0 @@
-timestamp,test-class,test-method,time,description,result
-2021-06-08 15:59:30.199,acme.testing.manager.task.ManagerTaskListTest,listManagerNegative,30656,"[1] user=0, password=Do exercises",Cannot find 'By.xpath: //div[@id='mainMenu']/ul/li/a[normalize-space()='Sign out']'

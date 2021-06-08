@@ -1,2 +1,0 @@
-timestamp,test-class,test-method,time,description,result
-2021-06-08 16:22:16.447,acme.testing.manager.task.ManagerTaskListTest,listManagerNegative,3847,"[1] user=administrator, password=administrator",OK
