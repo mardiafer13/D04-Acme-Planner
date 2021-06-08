@@ -20,4 +20,6 @@ anonymous.shout.list.label.text = Text
 anonymous.shout.list.label.info = Info
 anonymous.message.form.error.spam = The text contains spam words
 anonymous.message.form.error.spam.author = The author contains spam words
+anonymous.shout.list.label.atributo1 = atributo1
+anonymous.shout.list.label.atributo2 = atributo2
 

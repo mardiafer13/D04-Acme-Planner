@@ -506,7 +506,7 @@
 		<property name="reference" value="EMP1-JOB1" />
 		<property name="title" value="Title 1" />
 		<property name="deadline" value="2030/12/11 23:59" />
-		<property name="salary" value="€ 15,000.98" />
+		<property name="salary" value="EUR 15,000.98" />
 		<property name="score" value="10.45" />
 		<property name="description"
 			value="Lorem ipsum sit dolor amet." />
@@ -519,7 +519,7 @@
 		<property name="reference" value="EMP1-JOB2" />
 		<property name="title" value="Title 2" />
 		<property name="deadline" value="2030/12/11 23:59" />
-		<property name="salary" value="$ 20,000.00" />
+		<property name="salary" value="USD 20,000.00" />
 		<property name="score" value="99.98" />
 		<property name="description"
 			value="Lorem ipsum sit dolor amet." />
@@ -545,7 +545,7 @@
 		<property name="reference" value="EMP1-JOB4" />
 		<property name="title" value="Title 4" />
 		<property name="deadline" value="2030/01/31 00:00" />
-		<property name="salary" value="R$ 30,000.00" />
+		<property name="salary" value="USD 30,000.00" />
 		<property name="score" value="0.00" />
 		<property name="description"
 			value="Lorem ipsum sit dolor amet." />

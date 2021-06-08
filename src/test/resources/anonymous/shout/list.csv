@@ -1,6 +1,6 @@
-recordIndex,moment,author,text,info
-0,2021/05/20 00:00,Foo Bar,Just turning 50!,
-1,2021/05/21 15:55,Jane Doe,I have to clean the car,http://www.lavaderoSevilla.com
-2,2021/05/22 19:39,John Doe,I'm happy!, 
-3,2021/05/23 12:30,Leslie Design,I have to go to the dry cleaner!,http://cleanApp.com
-4,2021/05/24 12:30,Marta Design,I have to study for the exams,https://www.informatica.us.es/
+recordIndex,moment,author,text,info,atributo1
+0,2021/05/20 00:00,Foo Bar,Just turning 50!, ,2020/01/01
+1,2021/05/21 15:55,Jane Doe,I have to clean the car,http://www.lavaderoSevilla.com,2020/01/01
+2,2021/05/22 19:39,John Doe,I'm happy!, ,2020/01/01
+3,2021/05/23 12:30,Leslie Design,I have to go to the dry cleaner!,http://cleanApp.com,2020/01/01
+4,2021/05/24 12:30,Marta Design,I have to study for the exams,https://www.informatica.us.es/,2020/01/01

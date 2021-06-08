@@ -1,6 +1,6 @@
-recordIndex,author,text,info
-0,Foo Bar,Just turning 50!,
-1,Jane Doe,I have to clean the car,http://www.lavaderoSevilla.com
-2,John Doe,I'm happy!, 
-3,Leslie Design,I have to go to the dry cleaner!,http://cleanApp.com
-4,Marta Design,I have to study for the exams,https://www.informatica.us.es/
+recordIndex,author,text,info,atributo1
+0,Foo Bar,Just turning 50!, ,2020/01/01
+1,Jane Doe,I have to clean the car,http://www.lavaderoSevilla.com,2020/01/01
+2,John Doe,I'm happy!, ,2020/01/01
+3,Leslie Design,I have to go to the dry cleaner!,http://cleanApp.com,2020/01/01
+4,Marta Design,I have to study for the exams,https://www.informatica.us.es/,2020/01/01
