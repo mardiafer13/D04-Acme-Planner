@@ -21,6 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.configuration.Configuration;
+import acme.entities.controlCheck.ControlCheck;
 import acme.entities.shouts.Shout;
 import acme.features.administrator.Configuration.AdministratorConfigurationRepository;
 import acme.framework.components.Errors;
@@ -66,7 +67,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "author", "text", "info", "date", "money", "isCheck");//cambiar adjunto y tmb el view
+		request.unbind(entity, model, "author", "text", "info", "control.date", "control.money", "control.isCheck");//cambiar adjunto y tmb el view
 	}
 
 	@Override
@@ -75,14 +76,18 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		
 		
 		Shout result;
-		Date moment;	
+		Date moment;
+		ControlCheck control;
 		
 		moment = new Date(System.currentTimeMillis() - 1);
 
+		control = new ControlCheck();
 		result = new Shout();
 		
+		control.setMomento(moment);
+		
 		result.setMoment(moment);
-		result.setMomento(moment);
+		result.setControl(control);
 
 		return result;
 	}
@@ -110,19 +115,19 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
         final Collection<Shout> shouts = this.repository.findMany();
         final List<Shout> shout = new ArrayList<>(shouts);
         for(int i = 0; shout.size()>i; i++) {
-        	final Date date = shout.get(i).getDate();
+        	final Date date = shout.get(i).getControl().getDate();
         	
-        	if(entity.getDate() != null && entity.getDate().equals(date)){
+        	if(entity.getControl().getDate() != null && entity.getControl().getDate().equals(date)){
         		errors.state(request, false, "date", "anonymous.message.form.error.dateControl");
         		break;
         	}
         }
         
-        if(entity.getMoney() != null) {
-        	if(entity.getMoney().getAmount() < 0) {
+        if(entity.getControl().getMoney() != null) {
+        	if(entity.getControl().getMoney().getAmount() < 0) {
         		errors.state(request, false, "money", "anonymous.message.form.error.amountControl");
         	}
-        	if(!(entity.getMoney().getCurrency().trim().equals("EUR") || entity.getMoney().getCurrency().trim().equals("$"))) {
+        	if(!(entity.getControl().getMoney().getCurrency().trim().equals("EUR") || entity.getControl().getMoney().getCurrency().trim().equals("USD"))) {
         		errors.state(request, false, "money", "anonymous.message.form.error.currentControl");
         	}
         }
@@ -136,14 +141,14 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 		assert entity != null;
 		
-		final boolean confirmation = request.getModel().getBoolean("isCheck");	
-		
-		entity.setIsCheck(confirmation);
+//		final boolean confirmation = request.getModel().getBoolean("isCheck");	
+//		
+//		entity.getControl().setIsCheck(confirmation);
 		
 		Date moment;
 
 		moment = new Date(System.currentTimeMillis() - 1);
-		entity.setMomento(moment);
+		entity.getControl().setMomento(moment);
 		entity.setMoment(moment);
 		this.repository.save(entity);
 	}
