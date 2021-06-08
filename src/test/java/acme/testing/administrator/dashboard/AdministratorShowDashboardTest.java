@@ -85,6 +85,10 @@ public class AdministratorShowDashboardTest extends AcmePlannerTest {
 		final WebElement maximumWorkloadTasks = this.driver.findElement(locatorMaximumWorkloadTasks);
 		Assertions.assertEquals("11.25", maximumWorkloadTasks.getText());
 
+		final By variable;
+		variable = By.xpath("/html/body/div[2]/div/table/tbody/tr[16]/td");
+		final WebElement var2 = this.driver.findElement(variable);
+		Assertions.assertEquals("13.00", var2.getText());
 	}
 	/*
 	 * Testeamos que ni un manager ni un empleado
