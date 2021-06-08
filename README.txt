@@ -17,14 +17,14 @@ information system. Our github repository is https://github.com/mardiafer13/Acme
     Username: mardiafer13@alum.us.es
     Password: Str0ng-P@$$w0rd
 
-- Application url: http://app-ad4886f8-1ef4-442f-a986-05158c94f246.cleverapps.io/Acme-Planner/master/welcome
+- Application url: http://app-50019136-03c1-468f-a56e-a3b533870816.cleverapps.io/Acme-Planner/master/welcome
 
 - Environment variables:
 
-MYSQL_ADDON_HOST=bblrnxppl1dhetuwlnl1-mysql.services.clever-cloud.com
-MYSQL_ADDON_DB=bblrnxppl1dhetuwlnl1
-MYSQL_ADDON_USER=ue6zpkcrp2374vyb
+MYSQL_ADDON_HOST=b7xjnkitcvbcypirtenu-mysql.services.clever-cloud.com
+MYSQL_ADDON_DB=b7xjnkitcvbcypirtenu
+MYSQL_ADDON_USER=uo3kyktyixoayngu
 MYSQL_ADDON_PORT=3306
-MYSQL_ADDON_PASSWORD=e8ZjMkATDFfZt04jW66c 
-MYSQL_ADDON_URI=mysql://ue6zpkcrp2374vyb:e8ZjMkATDFfZt04jW66c@bblrnxppl1dhetuwlnl1-mysql.services.clever-cloud.com:3306/bblrnxppl1dhetuwlnl1
+MYSQL_ADDON_PASSWORD=cWcS4efpQZ4fx3oWR1WT 
+MYSQL_ADDON_URI=mysql://uo3kyktyixoayngu:cWcS4efpQZ4fx3oWR1WT@b7xjnkitcvbcypirtenu-mysql.services.clever-cloud.com:3306/b7xjnkitcvbcypirtenu
 
