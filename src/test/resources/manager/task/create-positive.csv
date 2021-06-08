@@ -6,15 +6,19 @@ recordIndex,title,description,periodInitial,periodFinal,workloadInHours,link,isP
 16,Study the math exam,I have to study the math exam,2021/06/24 19:50,2021/08/30 17:55,1.34,,false
 17,Clean the car,I have to clean the car,2021/06/30 17:30,2021/06/30 18:30,0.59,http://lavaderosSevilla.com,false
 18,Probando manager Id,Tengo que ir a comprar tomates,2021/09/30 17:50,2022/08/31 18:55,1.00,http://www.sample-app.com/,false
-19,Hacer DP tarea 8,Tengo que terminar la entrega,2021/07/31 17:50,2021/08/29 19:55,1.00,,false
+19,Hacer DP tarea 8,F,2021/07/31 17:50,2021/08/29 19:55,1.00,,false
 20,Hacer DP tarea 7,Tengo que terminar la entrega,2021/06/30 17:50,2021/08/11 19:55,1.00,http://www.sample-app.com/,false
 21,Hacer la compra,Tengo que terminar la entrega,2021/07/07 00:00,2021/07/08 00:00,1.00,,false
 22,Hacer DP tarea 5,Tengo que terminar la entrega,2021/06/30 19:50,2021/08/30 17:55,1.00,http://www.sample-app.com/,false
 23,Hacer DP tarea 10,Tengo que terminar la entrega,2021/07/31 13:50,2021/08/15 17:55,1.00,http://www.sample-app.com/,false
 24,g,Tengo que terminar la entrega,2021/07/31 13:50,2021/08/15 17:55,1.00,http://www.sample-app.com/,false
-25,Esto son 80 caracteres: ggggggggggggggggggggggggggggggggggggggggggggggggggggggg,Tengo que terminar la entrega,2021/07/31 13:50,2021/08/15 17:55,1.00,http://www.sample-app.com/,false
-26,Hacer DP tarea 10,F,2021/07/31 13:50,2021/08/15 17:55,1.00,http://www.sample-app.com/,false
-27,Hacer DP tarea 16,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,2021/07/31 13:50,2021/08/15 17:55,1.00,http://www.sample-app.com/,false
-28,Probando manager Id,Tengo que ir a comprar tomates,2021/09/30 17:50,2021/09/30 18:50,1.00,http://www.sample-app.com/,false
-29,Probando manager Id 3,Tengo que ir a comprar tomates,2021/09/30 17:50,2021/09/30 17:51,0.01,http://www.sample-app.com/,false
-30,Probando manager Id 4,Tengo que ir a comprar tomates,2021/09/30 17:50,2022/08/31 18:55,1.00,http://www.sample-app.com/,false
+25,Hacer DP tarea 16,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,2021/07/31 13:50,2021/08/15 17:55,1.00,http://www.sample-app.com/,false
+26,Probando manager Id,Tengo que ir a comprar tomates,2021/09/30 17:50,2021/09/30 18:50,1.00,http://www.sample-app.com/,false
+27,Probando manager Id 3,Tengo que ir a comprar tomates,2021/09/30 17:50,2021/09/30 17:51,0.01,http://www.sample-app.com/,false
+28,Probando manager Id 4,Tengo que ir a comprar tomates,2021/09/30 17:50,2021/09/30 18:51,1.01,http://www.sample-app.com/,false
+29,Probando manager Id 5,Tengo que ir a comprar tomates,2021/09/30 17:50,2021/09/30 17:50,0.00,http://www.sample-app.com/,false
+30,Probando manager Id 6,Tengo que ir a comprar tomates,2021/09/30 17:00,2021/09/30 17:59,0.59,http://www.sample-app.com/,false
+31,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,TITULO 80 LETRAS,2021/09/30 17:00,2021/09/30 17:59,0.59,http://www.sample-app.com/,false
+32,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,TITULO 79 LETRAS,2021/09/30 17:00,2021/09/30 17:59,0.59,http://www.sample-app.com/,false
+33,A,TITULO 1 LETRAS,2021/09/30 17:00,2021/09/30 17:59,0.59,http://www.sample-app.com/,false
+34,AA,TITULO 2 LETRAS,2021/09/30 17:00,2021/09/30 17:59,0.59,http://www.sample-app.com/,false
