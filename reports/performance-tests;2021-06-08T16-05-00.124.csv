@@ -1,0 +1,2 @@
+timestamp,test-class,test-method,time,description,result
+2021-06-08 16:05:51.334,acme.testing.manager.task.ManagerTaskListTest,listManagerNegative,30965,"[1] recordIndex=0, title=Do exercises, description=I have to finish the dp delivery, periodInitial=2021/03/31 17:50, periodFinal=2021/03/31 18:55, workloadInHours=0.44, link=http://www.sample-app.com, isPublic=true",Cannot find 'By.xpath: //div[@id='mainMenu']/ul/li/a[normalize-space()='Sign out']'
