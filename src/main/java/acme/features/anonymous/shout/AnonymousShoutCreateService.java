@@ -13,6 +13,7 @@
 package acme.features.anonymous.shout;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -74,9 +75,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		
 		
 		Shout result;
-		Date moment;
-
-//		final ControlCheck controlCheck = new ControlCheck();		
+		Date moment;	
 		
 		moment = new Date(System.currentTimeMillis() - 1);
 
@@ -84,11 +83,11 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		
 		result.setMoment(moment);
 		result.setMomento(moment);
-//		result.setControlCheck(controlCheck);
 
 		return result;
 	}
 
+	
 	@Override
     public void validate(final Request<Shout> request, final Shout entity, final Errors errors) {
         assert request != null;
@@ -99,8 +98,6 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
         final List<Configuration> lsp = new ArrayList<>();
         lsp.addAll(sp);
         
-//        entity.setControlCheck(null);
-        
         for (int i = 0; i < lsp.size(); i++) {
             if(lsp.get(i).isSpam(entity.getText())){
                 errors.state(request, false, "text", "anonymous.message.form.error.spam");
@@ -110,6 +107,27 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
             }
         }
         
+        final Collection<Shout> shouts = this.repository.findMany();
+        final List<Shout> shout = new ArrayList<>(shouts);
+        for(int i = 0; shout.size()>i; i++) {
+        	final Date date = shout.get(i).getDate();
+        	
+        	if(entity.getDate() != null && entity.getDate().equals(date)){
+        		errors.state(request, false, "date", "anonymous.message.form.error.dateControl");
+        		break;
+        	}
+        }
+        
+        if(entity.getMoney() != null) {
+        	if(entity.getMoney().getAmount() < 0) {
+        		errors.state(request, false, "money", "anonymous.message.form.error.amountControl");
+        	}
+        	if(!(entity.getMoney().getCurrency().trim().equals("EUR") || entity.getMoney().getCurrency().trim().equals("$"))) {
+        		errors.state(request, false, "money", "anonymous.message.form.error.currentControl");
+        	}
+        }
+        
+        
 	}
 	
 	
@@ -118,13 +136,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 		assert entity != null;
 		
-		
-//		final int controlId = entity.getControlCheck().getId();
-//		final ControlCheck control = this.repository.findControlCheckById(controlId);
-		final boolean confirmation = request.getModel().getBoolean("isCheck");
-		
-//		control.setIsCheck(confirmation);
-//		control.setMoment(new Date(System.currentTimeMillis() - 1));		
+		final boolean confirmation = request.getModel().getBoolean("isCheck");	
 		
 		entity.setIsCheck(confirmation);
 		
@@ -133,7 +145,6 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMomento(moment);
 		entity.setMoment(moment);
-//		entity.setControlCheck(control);
 		this.repository.save(entity);
 	}
 

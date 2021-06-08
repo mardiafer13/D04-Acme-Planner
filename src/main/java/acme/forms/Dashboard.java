@@ -49,10 +49,13 @@ public class Dashboard implements Serializable {
 	Double						maximumWorkloadTasks;
 	
 	//ControlCheck
-	Double						numberOfPrimero;
-	Double						numberOfSegundo;
-	Double						averageMoney;
-	Double						deviationMoney;
+	Double						numberOfCheckTrue;
+	Double						ratioCheckTrue;
+	Double						ratioCheckFalse;
+	Double						averageMoneyEUR;
+	Double						averageMoneyDollar;
+	Double						deviationMoneyEUR;
+	Double						deviationMoneyDollar;
 	
 
 	// Derived attributes -----------------------------------------------------

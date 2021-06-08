@@ -26,4 +26,7 @@ anonymous.shout.list.label.money = Money
 anonymous.shout.list.label.isCheck = Check
 anonymous.message.form.error.spam = The text contains spam words
 anonymous.message.form.error.spam.author = The author contains spam words
+anonymous.message.form.error.dateControl = The date must be unique
+anonymous.message.form.error.currentControl = Only accepted Euros and Dollars
+anonymous.message.form.error.amountControl = The amount must be positive
 

@@ -20,8 +20,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.Range;
-
+import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -47,8 +46,7 @@ public class ControlCheck extends DomainEntity {
 	protected Date				date;
 	
 	@NotNull
-	@Range(min = 0)
-	protected Double			money;
+	protected Money				money;
 
 	@NotNull
 	protected Boolean       	isCheck;

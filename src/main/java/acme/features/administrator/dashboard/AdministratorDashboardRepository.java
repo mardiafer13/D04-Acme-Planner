@@ -13,10 +13,12 @@
 package acme.features.administrator.dashboard;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.shouts.Shout;
 import acme.entities.tasks.Task;
 import acme.framework.repositories.AbstractRepository;
 
@@ -67,22 +69,24 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	
 //	//ControlCheck
-//	@Query("select c from ControlCheck c")
-//	Collection<Task> findControlCheck();
-//	
-//	@Query("select 1.0 * count(c) from ControlCheck c  where c.isCheck= 1")
-//	Double numberOfCheckPrimeroTrue();
-//	
-//	@Query("select 1.0 * count(c) from ControlCheck c  where t.isCheck = 0")
-//	Double numberOfCheckPrimeroFalse();
-//	
-//	@Query("select 1.0 * count(c.segundo) from ControlCheck c")
-//	Double numberOfSegundo();
-//	
-//	@Query("select avg(c.money) from ControlCheck c")
-//	Double averageMoney();
-//	
-//	@Query("select stddev(c.money) from ControlCheck c")
-//	Double deviationMoney();
+
+	@Query("select s from Shout s")
+	Collection<Shout> findShouts();
+	
+	@Query("select 1.0 * count(s) from Shout s  where s.flag= 1")
+	Double numberShoutsFlagTrue();
+	
+	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where a.flag = 1")
+	Double ratioOfShoutsWhoseFlagsAreTrue();
+	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where a.flag = 0")
+	Double ratioOfShoutsWhoseFlagsAreFalse();
+	
+	@Query("select avg(s.money.amount) from Shout s group by s.money.currency")
+	List<Double> averageMoneyGroupByCurrency();
+
+	@Query("select stddev(s.money.amount) from Shout s group by s.money.currency")
+	List<Double> deviationMoneyGroupByCurrency();
+
+
 
 }
