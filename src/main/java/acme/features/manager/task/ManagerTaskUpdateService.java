@@ -95,12 +95,8 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			errors.state(request, !lsp.get(i).isSpam(entity.getDescription()), "description", "manager.message.form.error.spam");
 		}
 		
-		if(entity.getPeriodInitial()==null) {
+		if(entity.getPeriodInitial()==null || entity.getPeriodFinal()==null) {
 			errors.state(request, false, "periodInitial", "manager.message.form.error.date4");
-		}
-		
-		if(entity.getPeriodFinal()==null) {
-			errors.state(request, false, "periodFinal", "manager.message.form.error.date4");
 		}
 
 		if (entity.getPeriodFinal() != null && entity.getPeriodInitial() != null && entity.getPeriodInitial().after(entity.getPeriodFinal())) {
@@ -131,12 +127,14 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			
 			if(tamaño>2) {
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload2");
-			} else if(parteDecimal<0 || parteDecimal>=60) {
+			}else if(parteDecimal<0 || parteDecimal>=60) {
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload2");
 			} else if (entity.getPeriodInitial() != null && entity.getPeriodFinal() != null && workloadInMinutes > (entity.durationPeriodInMinutes())) {
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload");
-			} else if(entity.getPeriodInitial()==null || entity.getPeriodFinal() == null) {
+			} else if(entity.getPeriodInitial()==null || entity.getPeriodFinal() == null || entity.getPeriodInitial().after(entity.getPeriodFinal()) || entity.getPeriodFinal().before(entity.getPeriodInitial()) ||
+				entity.getPeriodInitial().before(date) || entity.getPeriodFinal().before(date)) {
 				errors.state(request,  false, "workloadInHours", "manager.message.form.error.workload3");
+
 			}
 		}
 

@@ -160,12 +160,13 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			final int tamaño = parteDecimalCompleta.length();
 			
 			if(tamaño>2) {
-				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload4");
-			} else if(parteDecimal<0 || parteDecimal>=60) {
+				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload2");
+			}else if(parteDecimal<0 || parteDecimal>=60) {
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload2");
 			} else if (entity.getPeriodInitial()!=null && entity.getPeriodFinal()!=null && workloadInMinutes > (entity.durationPeriodInMinutes())) {
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload");
-			} else if(entity.getPeriodInitial()==null || entity.getPeriodFinal() == null) {
+			} else if(entity.getPeriodInitial()==null || entity.getPeriodFinal() == null || entity.getPeriodInitial().after(entity.getPeriodFinal()) || entity.getPeriodFinal().before(entity.getPeriodInitial()) ||
+				entity.getPeriodInitial().before(date) || entity.getPeriodFinal().before(date)) {
 				errors.state(request,  false, "workloadInHours", "manager.message.form.error.workload3");
 
 			}
