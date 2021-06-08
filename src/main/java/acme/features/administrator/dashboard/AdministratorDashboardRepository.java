@@ -13,6 +13,7 @@
 package acme.features.administrator.dashboard;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -67,7 +68,27 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	
 //	//ControlCheck
-//
+	
+	@Query("select 1.0 * count(cr) from ControlCheck cr  where cr.isCheck= 1") 
+	Double numberShoutsCheckTrue();
+		
+	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where a.control.isCheck = 1")	
+	Double ratioCheckTrue();
+
+	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where a.control.isCheck = 0")
+	Double ratioCheckFalse();
+
+	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where year(a.control.date) = 2021")
+	Double ratioOfShoutsYear2020();
+
+	@Query("select avg(cr.money.amount) from ControlCheck cr group by cr.money.currency")
+	List<Double> averageMoneyCureency();
+
+	@Query("select stddev(cr.money.amount) from ControlCheck cr group by cr.money.currency")
+	List<Double> deviationMoneyCurrency();
+		
+		
+		
 //	@Query("select s from Shout s")
 //	Collection<Shout> findShouts();
 //	

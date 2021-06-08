@@ -12,8 +12,9 @@
 
 package acme.features.anonymous.shout;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -42,7 +43,6 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	protected AdministratorConfigurationRepository	repositorySpamwords;
 
 	// AbstractCreateService<Administrator, Shout> interface --------------
-
 
 	@Override
 	public boolean authorise(final Request<Shout> request) {
@@ -92,7 +92,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		return result;
 	}
 
-	
+
 	@Override
     public void validate(final Request<Shout> request, final Shout entity, final Errors errors) {
         assert request != null;
@@ -112,23 +112,40 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
             }
         }
         
-        final Collection<Shout> shouts = this.repository.findMany();
-        final List<Shout> shout = new ArrayList<>(shouts);
-        for(int i = 0; shout.size()>i; i++) {
-        	final Date date = shout.get(i).getControl().getDate();
-        	
-        	if(entity.getControl().getDate() != null && entity.getControl().getDate().equals(date)){
-        		errors.state(request, false, "date", "anonymous.message.form.error.dateControl");
-        		break;
-        	}
-        }
+
+
+		if(!errors.hasErrors("control.date")){
+			//Check if date is current
+			//Parse date from form to LocalDate
+			
+			//INFODATE IS LOCALDATE
+			//final LocalDate sheetDate = entity.getSheet().getInfoDate();
+			
+			//INFODATE IS STRING
+			final String controlDateString = entity.getControl().getDate();
+			final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+            final LocalDate controlDate = LocalDate.parse(controlDateString, dtf);
+            
+            //Get current date as LocalDate
+			final LocalDate today = LocalDate.now();
+			
+			errors.state(request, controlDate.isEqual(today), "control.date", "anonymous.shout.control.date.currentDate");
+			
+			//Check if date is unique
+	        final Integer sameDate = this.repository.totalControlDates(entity.getControl().getDate());
+	        final Boolean date = sameDate<1;
+			
+			errors.state(request, date, "control.date", "anonymous.message.form.error.dateControl");
+		}
         
+        
+		
         if(entity.getControl().getMoney() != null) {
         	if(entity.getControl().getMoney().getAmount() < 0) {
-        		errors.state(request, false, "money", "anonymous.message.form.error.amountControl");
+        		errors.state(request, false, "control.money", "anonymous.message.form.error.amountControl");
         	}
-        	if(!(entity.getControl().getMoney().getCurrency().trim().equals("EUR") || entity.getControl().getMoney().getCurrency().trim().equals("USD"))) {
-        		errors.state(request, false, "money", "anonymous.message.form.error.currentControl");
+        	if(!(entity.getControl().getMoney().getCurrency().equals("EUR")) && !(entity.getControl().getMoney().getCurrency().equals("USD"))) {
+        		errors.state(request, false, "control.money", "anonymous.message.form.error.currentControl");
         	}
         }
         

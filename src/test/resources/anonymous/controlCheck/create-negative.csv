@@ -1,0 +1,4 @@
+recordIndex,author,text,info,date,money,isCheck
+0,Sex,Good morning!,http://www.sample-app.com,2021/03/01, WEST 34, false
+1,Hi,,www.sample-app.com,2021/03/01 17:24, EUR -34, true
+

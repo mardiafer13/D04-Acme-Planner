@@ -52,10 +52,10 @@ public class Dashboard implements Serializable {
 	Double						numberOfCheckTrue;
 	Double						ratioCheckTrue;
 	Double						ratioCheckFalse;
-	Double						averageMoneyEUR;
-	Double						averageMoneyDollar;
-	Double						deviationMoneyEUR;
-	Double						deviationMoneyDollar;
+	Double						averageMoneyCurrent1;
+	Double						averageMoneyCurrent2;
+	Double						deviationMoneyCurrent1;
+	Double						deviationMoneyCurrent2;
 	
 
 	// Derived attributes -----------------------------------------------------

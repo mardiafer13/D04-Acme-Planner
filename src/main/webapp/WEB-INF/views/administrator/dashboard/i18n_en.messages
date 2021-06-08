@@ -15,6 +15,13 @@ administrator.dashboard.form.label.average-number-jobs-employer =  Average numbe
 administrator.dashboard.form.label.average-number-applications-worker =  Average number of applications per worker
 administrator.dashboard.form.label.average-number-applications-employer = Average number of applications per employer
 
+administrator.dashboard.form.label.numberOfCheckTrue = Number of True Check
+administrator.dashboard.form.label.ratioCheckTrue = Ratio of Check True
+administrator.dashboard.form.label.ratioCheckFalse = Ratio of Check False
+administrator.dashboard.form.label.averageMoneyCurrent1 = Average of Euros
+administrator.dashboard.form.label.averageMoneyCurrent2 = Average of Dollars
+administrator.dashboard.form.label.deviationMoneyCurrent1 = Deviation of Euros
+administrator.dashboard.form.label.deviationMoneyCurrent2 = Deviation of Dollar
 
 administrator.dashboard.form.label.number-public-task =  number of public tasks
 administrator.dashboard.form.label.number-private-task =  number of private tasks

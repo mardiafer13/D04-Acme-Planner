@@ -37,5 +37,8 @@ public interface AnonymousShoutRepository extends AbstractRepository {
 
 	@Query("select cr from ControlCheck cr where cr.id=?1")
 	ControlCheck findControlCheckById(int id);
+	
+	@Query("select count(s) from Shout s where s.control.date = ?1")
+    Integer totalControlDates(String date);
 
 }

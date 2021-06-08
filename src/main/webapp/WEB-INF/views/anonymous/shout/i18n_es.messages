@@ -24,8 +24,11 @@ anonymous.shout.list.label.info = Info
 anonymous.shout.list.label.date = Fecha
 anonymous.shout.list.label.money = Dinero
 anonymous.shout.list.label.isCheck = Check
+
 anonymous.message.form.error.spam = El texto contiene palabras spam
 anonymous.message.form.error.spam.author = El autor contiene palabras spam
 anonymous.message.form.error.dateControl = La fecha debe ser unica
 anonymous.message.form.error.currentControl = Solo se aceptan Euros y Dolares
 anonymous.message.form.error.amountControl = La cantidad de dinero debe ser positiva
+anonymous.message.form.error.dateControl = La fecha debe ser unica
+anonymous.shout.control.date.currentDate = La fecha debe ser igual que el dia de hoy

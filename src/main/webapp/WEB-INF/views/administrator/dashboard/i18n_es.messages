@@ -15,6 +15,14 @@ administrator.dashboard.form.label.average-number-jobs-employer =  Número medio
 administrator.dashboard.form.label.average-number-applications-worker =  Número medio de solicitudes por trabajador
 administrator.dashboard.form.label.average-number-applications-employer = Número medio de solicitudes por empleador
 
+administrator.dashboard.form.label.numberOfCheckTrue = Número de checks verdaderos
+administrator.dashboard.form.label.ratioCheckTrue = Ratio de checks verdaderos
+administrator.dashboard.form.label.ratioCheckFalse = Ratio de checks falsos
+administrator.dashboard.form.label.averageMoneyCurrent1 = Media de euros
+administrator.dashboard.form.label.averageMoneyCurrent2 = Media de dolares
+administrator.dashboard.form.label.deviationMoneyCurrent1 = Desviacion de euros
+administrator.dashboard.form.label.deviationMoneyCurrent2 = Desviacion de dolares
+
 administrator.dashboard.form.label.number-public-task =  Número de tareas públicas
 administrator.dashboard.form.label.number-private-task =  Número de tareas privadas
 administrator.dashboard.form.label.number-final-task =  Número tareas terminadas

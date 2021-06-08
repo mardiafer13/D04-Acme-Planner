@@ -26,7 +26,7 @@ public class AnonymousShoutListRecentService implements AbstractListService<Anon
 	@Override
 	public boolean authorise(final Request<Shout> request) {
 		assert request != null;
-
+		
 		return true;
 	}
 	

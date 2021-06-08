@@ -20,6 +20,73 @@
 </h2>
 
 <table class="table table-sm">
+	<%-- Control --%>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.numberOfCheckTrue"/>
+		</th>
+		<td>
+			<acme:print value="${numberOfCheckTrue}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.ratioCheckTrue"/>
+		</th>
+		<td>
+			<acme:print value="${ratioCheckTrue}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.ratioCheckFalse"/>
+		</th>
+		<td>
+			<acme:print value="${ratioCheckFalse}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.averageMoneyCurrent1"/>
+		</th>
+		<td>
+			<acme:print value="${averageMoneyCurrent1}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.averageMoneyCurrent2"/>
+		</th>
+		<td>
+			<acme:print value="${averageMoneyCurrent2}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviationMoneyCurrent1"/>
+		</th>
+		<td>
+			<acme:print value="${deviationMoneyCurrent1}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviationMoneyCurrent2"/>
+		</th>
+		<td>
+			<acme:print value="${deviationMoneyCurrent2}"/>
+		</td>
+	</tr>
+
+		
+		
+		
 		
 	<%-- Parte de entregable inicio--%>
 	<tr>

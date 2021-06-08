@@ -20,6 +20,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import acme.entities.shouts.Shout;
 import acme.framework.datatypes.Money;
@@ -43,9 +44,9 @@ public class ControlCheck extends DomainEntity {
 	protected Date				momento;
 	
 	@Column(unique=true)
-	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				date;
+	@Pattern(regexp = "([12]\\d{3}/(0[1-9]|1[0-2])/(0[1-9]|[12]\\d|3[01]))")//yyyy/MM/dd
+	protected String			date;
 	
 	@NotNull
 	protected Money				money;
