@@ -77,9 +77,10 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 					
 		@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where a.entidad1.atributo4 = false")
 		Double ratioOfShoutsAtributo3False();
-		
+		/*
 		@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where year(a.entidad1.atributo2) = 2021")
 		Double ratioOfShoutsYear2020();
+		*/
 		
 		@Query("select avg(e.atributo3.amount) from Entidad1 e group by e.atributo3.currency")
 		List<Double> averageEntidad1GroupByCurrency();

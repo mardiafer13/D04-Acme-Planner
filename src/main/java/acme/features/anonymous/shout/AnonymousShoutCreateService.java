@@ -80,7 +80,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		moment = new Date(System.currentTimeMillis() - 1);
 		entidad = new Entidad1();
 		
-		//entidad.setInfoStamp(moment);
+		entidad.setAtributo2(moment);
 		
 		result = new Shout();
 		result.setMoment(moment);
@@ -118,9 +118,12 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 
 		Date moment;
-
+		Entidad1 entidad;
+		
+		entidad = entity.getEntidad1();
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
+		entidad.setAtributo2(moment);
 		this.repository.save(entity.getEntidad1());
 		this.repository.save(entity);
 	}

@@ -22,7 +22,7 @@
 	<acme:form-textbox code="anonymous.shout.form.label.atributo1" path="entidad1.atributo1"/>
 	<acme:form-moment code="anonymous.shout.form.label.atributo2" path="entidad1.atributo2"/>
 	<acme:form-money code="anonymous.shout.form.label.atributo3" path="entidad1.atributo3"/>
-	<acme:form-checkbox code="anonymous.shout.form.label.atributo" path="entidad1.atributo4"/>
+	<acme:form-checkbox code="anonymous.shout.form.label.atributo4" path="entidad1.atributo4"/>
 	
 	
 	<acme:form-submit code="anonymous.shout.form.button.create" action="/anonymous/shout/create"/>

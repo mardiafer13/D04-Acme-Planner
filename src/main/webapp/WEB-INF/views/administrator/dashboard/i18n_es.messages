@@ -27,5 +27,12 @@ administrator.dashboard.form.label.average-workload-tasks= Media de la carga de 
 administrator.dashboard.form.label.deviation-workload-tasks= Desviación típica de la carga de trabajo (en horas)
 administrator.dashboard.form.label.minimum-workload-tasks= Mínimo de la carga de trabajo (en horas)
 administrator.dashboard.form.label.maximum-workload-tasks= Máximo de la carga de trabajo (en horas)
+administrator.dashboard.form.label.ratioAtributo4True = Proporción de gritos cuyo atributo 4 es true
+administrator.dashboard.form.label.ratioAtributo4False = Proporción de gritos cuyo atributo 4 es false 
+administrator.dashboard.form.label.averageMoneda1 = Media de XXX agrupadas por moneda 1
+administrator.dashboard.form.label.averageMoneda2 = Media de XXX agrupadas por moneda 2
+administrator.dashboard.form.label.deviationMoneda1 = Desviación de XXX agrupadas por moneda 1
+administrator.dashboard.form.label.deviationMoneda2 = Desviación de XXX agrupadas por moneda 2
+
 
 administrator.dashboard.form.title.application-statuses = Estado de las solicitudes

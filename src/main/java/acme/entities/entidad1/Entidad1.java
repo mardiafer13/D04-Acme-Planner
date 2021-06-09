@@ -25,7 +25,7 @@ public class Entidad1 extends DomainEntity {
 	protected static final long	serialVersionUID	= 1L;
 	
 	@NotBlank
-    @Pattern(regexp = "([12]\\d{3}/(0[1-9]|1[0-2])/(0[1-9]|[12]\\d|3[01]))", message = "default.error.conversion")
+    @Pattern(regexp = "([12]\\d{3}/(0[1-9]|1[0-2])/(0[1-9]|[12]\\d|3[01]))", message = "Invalid format")
     protected String atributo1;
 	
 	@NotNull

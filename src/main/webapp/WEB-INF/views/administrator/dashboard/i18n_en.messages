@@ -28,7 +28,12 @@ administrator.dashboard.form.label.average-workload-tasks= Average workload on t
 administrator.dashboard.form.label.deviation-workload-tasks= Deviation workload on tasks (in hours)
 administrator.dashboard.form.label.minimum-workload-tasks= Minimum workload on tasks (in hours)
 administrator.dashboard.form.label.maximum-workload-tasks= Maximum workload on tasks (in hours)
-
+administrator.dashboard.form.label.ratioAtributo4True = Ratio of shouts whose attribute4 is true
+administrator.dashboard.form.label.ratioAtributo4False = Ratio of shouts whose attribute4 is false
+administrator.dashboard.form.label.averageMoneda1 = Average of XXX grouped by currency 1
+administrator.dashboard.form.label.averageMoneda2 = Average of XXX grouped by currency 2
+administrator.dashboard.form.label.deviationMoneda1 = Deviation of XXX grouped by currency 1
+administrator.dashboard.form.label.deviationMoneda2 = Deviation of XXX grouped by currency 2
 
 administrator.dashboard.form.title.application-statuses = Application statuses
 

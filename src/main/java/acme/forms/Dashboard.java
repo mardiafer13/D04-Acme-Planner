@@ -52,10 +52,10 @@ public class Dashboard implements Serializable {
 		Double						ratioAtributo4True;
 		Double						ratioAtributo4False;
 		Double 						ratioOfShoutsYear2020;
-		Double 						averageMoneda1;
-		Double 						averageMoneda2;
-		Double 						deviationMoneda1;
-		Double						deviationMoneda2;
+		Double 						averageCurrency1;
+		Double 						averageCurrency2;
+		Double 						deviationCurrency1;
+		Double						deviationCurrency2;
 
 	// Derived attributes -----------------------------------------------------
 

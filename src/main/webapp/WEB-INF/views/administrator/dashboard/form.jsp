@@ -137,21 +137,13 @@
 		</td>
 	</tr>
 	
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.ratioOfShoutsYear2020"/>
-		</th>
-		<td>
-			<acme:print value="${ratioOfShoutsYear2020}"/>
-		</td>
-	</tr>
 	
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.averageMoneda1"/>
 		</th>
 		<td>
-			<acme:print value="${averageMoneda1}"/>
+			<acme:print value="${averageCurrency1}"/>
 		</td>
 	</tr>
 	
@@ -160,7 +152,7 @@
 			<acme:message code="administrator.dashboard.form.label.averageMoneda2"/>
 		</th>
 		<td>
-			<acme:print value="${averageMoneda2}"/>
+			<acme:print value="${averageCurrency2}"/>
 		</td>
 	</tr>
 	<tr>
@@ -168,7 +160,7 @@
 			<acme:message code="administrator.dashboard.form.label.deviationMoneda1"/>
 		</th>
 		<td>
-			<acme:print value="${deviationMoneda1}"/>
+			<acme:print value="${deviationCurrency1}"/>
 		</td>
 	</tr>
 	
@@ -177,7 +169,7 @@
 			<acme:message code="administrator.dashboard.form.label.deviationMoneda2"/>
 		</th>
 		<td>
-			<acme:print value="${deviationMoneda2}"/>
+			<acme:print value="${deviationCurrency2}"/>
 		</td>
 	</tr>
 	

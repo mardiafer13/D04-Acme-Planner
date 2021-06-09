@@ -13,6 +13,10 @@ anonymous.shout.form.label.text = Text:
 anonymous.shout.form.label.info = Info:
 anonymous.shout.form.button.create = Shout!
 anonymous.shout.form.button.return = Return
+anonymous.shout.form.label.atributo1 = Attribute 1:
+anonymous.shout.form.label.atributo2 = Attribute 2:
+anonymous.shout.form.label.atributo3 = Attribute 3:
+anonymous.shout.form.label.atributo4 = Attribute 4:
  
 anonymous.shout.list.label.moment = Moment
 anonymous.shout.list.label.author = Author
@@ -20,6 +24,6 @@ anonymous.shout.list.label.text = Text
 anonymous.shout.list.label.info = Info
 anonymous.message.form.error.spam = The text contains spam words
 anonymous.message.form.error.spam.author = The author contains spam words
-anonymous.shout.list.label.atributo1 = atributo1
-anonymous.shout.list.label.atributo2 = atributo2
+anonymous.shout.list.label.atributo1 = Attribute 1
+anonymous.shout.list.label.atributo2 = Attribute 2
 
