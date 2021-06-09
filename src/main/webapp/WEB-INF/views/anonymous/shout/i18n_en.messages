@@ -26,4 +26,6 @@ anonymous.message.form.error.spam = The text contains spam words
 anonymous.message.form.error.spam.author = The author contains spam words
 anonymous.shout.list.label.atributo1 = Attribute 1
 anonymous.shout.list.label.atributo2 = Attribute 2
+anonymous.shout.list.label.atributo3 = Attribute 3
+anonymous.shout.list.label.atributo4 = Attribute 4
 

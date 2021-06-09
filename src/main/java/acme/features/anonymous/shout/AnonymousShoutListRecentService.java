@@ -36,7 +36,7 @@ public class AnonymousShoutListRecentService implements AbstractListService<Anon
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "author", "text", "moment", "info", "entidad1.atributo1", "entidad1.atributo2");
+		request.unbind(entity, model, "author", "text", "moment", "info", "entidad1.atributo1", "entidad1.atributo2", "entidad1.atributo3", "entidad1.atributo4");
 	}
 
 	

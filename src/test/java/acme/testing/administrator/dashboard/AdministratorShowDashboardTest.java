@@ -88,7 +88,7 @@ public class AdministratorShowDashboardTest extends AcmePlannerTest {
 		final By variable;
 		variable = By.xpath("/html/body/div[2]/div/table/tbody/tr[16]/td");
 		final WebElement var2 = this.driver.findElement(variable);
-		Assertions.assertEquals("13.00", var2.getText());
+		Assertions.assertEquals("0.00", var2.getText());
 	}
 	/*
 	 * Testeamos que ni un manager ni un empleado
