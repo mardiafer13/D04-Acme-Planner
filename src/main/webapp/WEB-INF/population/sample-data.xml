@@ -17,47 +17,47 @@
 
 	<!-- Shouts -->
 	<bean id="entidad01" class="acme.entities.entidad1.Entidad1">
-		<property name="atributo1" value="2020/01/01"></property>
+		<property name="atributo1" value="2021/05/10"></property>
 		<property name="atributo2" value="2021/06/01 19:39"></property>
-		<property name="atributo3" value="13 USD"></property>
+		<property name="atributo3" value="500 USD"></property>
 		<property name="atributo4" value="true"></property>
 	</bean>
 	<bean id="entidad02" class="acme.entities.entidad1.Entidad1">
-		<property name="atributo1" value="2020/01/01"></property>
-		<property name="atributo2" value="2021/06/01 19:39"></property>
-		<property name="atributo3" value="13 USD"></property>
-		<property name="atributo4" value="true"></property>
+		<property name="atributo1" value="2021/01/01"></property>
+		<property name="atributo2" value="2021/07/01 19:39"></property>
+		<property name="atributo3" value="30 USD"></property>
+		<property name="atributo4" value="false"></property>
 	</bean>
 
 	<bean id="entidad03" class="acme.entities.entidad1.Entidad1">
 		<property name="atributo1" value="2020/01/01"></property>
 		<property name="atributo2" value="2021/06/01 19:39"></property>
-		<property name="atributo3" value="13 USD"></property>
+		<property name="atributo3" value="1000 USD"></property>
 		<property name="atributo4" value="true"></property>
 	</bean>
 	<bean id="entidad04" class="acme.entities.entidad1.Entidad1">
 		<property name="atributo1" value="2020/01/01"></property>
 		<property name="atributo2" value="2021/06/01 19:39"></property>
-		<property name="atributo3" value="13 USD"></property>
+		<property name="atributo3" value="5 USD"></property>
 		<property name="atributo4" value="true"></property>
 	</bean>
 	<bean id="entidad05" class="acme.entities.entidad1.Entidad1">
 		<property name="atributo1" value="2020/01/01"></property>
-		<property name="atributo2" value="2021/06/01 19:39"></property>
+		<property name="atributo2" value="2021/06/24 12:30"></property>
 		<property name="atributo3" value="13 USD"></property>
-		<property name="atributo4" value="true"></property>
+		<property name="atributo4" value="false"></property>
 	</bean>
 	<bean id="entidad06" class="acme.entities.entidad1.Entidad1">
-		<property name="atributo1" value="2020/01/01"></property>
-		<property name="atributo2" value="2021/06/01 19:39"></property>
-		<property name="atributo3" value="13 USD"></property>
+		<property name="atributo1" value="2021/01/01"></property>
+		<property name="atributo2" value="2021/06/01 20:00"></property>
+		<property name="atributo3" value="10 USD"></property>
 		<property name="atributo4" value="true"></property>
 	</bean>
 	<bean id="entidad07" class="acme.entities.entidad1.Entidad1">
-		<property name="atributo1" value="2020/01/01"></property>
+		<property name="atributo1" value="2020/05/03"></property>
 		<property name="atributo2" value="2021/06/01 19:39"></property>
-		<property name="atributo3" value="13 USD"></property>
-		<property name="atributo4" value="true"></property>
+		<property name="atributo3" value="100 USD"></property>
+		<property name="atributo4" value="false"></property>
 	</bean>
 
 	<bean id="shout01" class="acme.entities.shouts.Shout">
