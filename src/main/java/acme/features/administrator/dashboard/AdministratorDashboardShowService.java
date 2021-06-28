@@ -92,15 +92,15 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		//final Collection<Shout> shouts = this.repository.findShouts();
 		Double numberOfCheckTrue;
 		Double ratioCheckTrue;
-		Double ratioCheckFalse;
+		final Double ratioCheckFalse;
 		Double averageMoneyCurrent1;
 		Double averageMoneyCurrent2;
 		Double deviationMoneyCurrent1;
 		Double deviationMoneyCurrent2;
 
 		numberOfCheckTrue = this.repository.numberShoutsCheckTrue();
-		ratioCheckTrue = this.repository.ratioCheckTrue();
-		ratioCheckFalse = this.repository.ratioCheckFalse();
+		ratioCheckTrue = this.repository.ratioOfShoutsYear2020();
+		//ratioCheckFalse = this.repository.ratioCheckFalse();
 		final List<Double> averageShoutMoney = this.repository.averageMoneyCureency();
 		final List<Double> deviationShoutMoney = this.repository.deviationMoneyCurrency();
 				
@@ -210,7 +210,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		//Parte examen
 		result.setNumberOfCheckTrue(numberOfCheckTrue);
 		result.setRatioCheckTrue(ratioCheckTrue);
-		result.setRatioCheckFalse(ratioCheckFalse);
+		//result.setRatioCheckFalse(ratioCheckFalse);
 		result.setAverageMoneyCurrent1(averageMoneyCurrent1);
         result.setAverageMoneyCurrent2(averageMoneyCurrent2);
         result.setDeviationMoneyCurrent1(deviationMoneyCurrent1);

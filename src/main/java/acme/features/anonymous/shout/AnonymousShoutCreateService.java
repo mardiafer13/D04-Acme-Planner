@@ -22,7 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.configuration.Configuration;
-import acme.entities.controlCheck.ControlCheck;
+import acme.entities.controlCheck.Rocke;
 import acme.entities.shouts.Shout;
 import acme.features.administrator.Configuration.AdministratorConfigurationRepository;
 import acme.framework.components.Errors;
@@ -67,7 +67,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "author", "text", "info", "control.date", "control.money", "control.isCheck");//cambiar adjunto y tmb el view
+		request.unbind(entity, model, "author", "text", "info", "rocke.insignia", "rocke.budget", "rocke.important");//cambiar adjunto y tmb el view
 	}
 
 	@Override
@@ -77,17 +77,17 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		
 		Shout result;
 		Date moment;
-		ControlCheck control;
+		Rocke control;
 		
-		moment = new Date(System.currentTimeMillis() - 1);
+		moment = new Date(System.currentTimeMillis() - 604800000);
 
-		control = new ControlCheck();
+		control = new Rocke();
 		result = new Shout();
 		
-		control.setMomento(moment);
+		control.setDeadline(moment);
 		
 		result.setMoment(moment);
-		result.setControl(control);
+		result.setRocke(control);
 
 		return result;
 	}
@@ -114,7 +114,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
         
 
 
-		if(!errors.hasErrors("control.date")){
+		if(!errors.hasErrors("rocke.insignia")){
 			//Check if date is current
 			//Parse date from form to LocalDate
 			
@@ -122,30 +122,30 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			//final LocalDate sheetDate = entity.getSheet().getInfoDate();
 			
 			//INFODATE IS STRING
-			final String controlDateString = entity.getControl().getDate();
+			final String controlDateString = entity.getRocke().getInsignia();
 			final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
             final LocalDate controlDate = LocalDate.parse(controlDateString, dtf);
             
             //Get current date as LocalDate
 			final LocalDate today = LocalDate.now();
 			
-			errors.state(request, controlDate.isEqual(today), "control.date", "anonymous.shout.control.date.currentDate");
+			errors.state(request, controlDate.isEqual(today), "rocke.insignia", "anonymous.shout.control.date.currentDate");
 			
 			//Check if date is unique
-	        final Integer sameDate = this.repository.totalControlDates(entity.getControl().getDate());
+	        final Integer sameDate = this.repository.totalControlDates(entity.getRocke().getInsignia());
 	        final Boolean date = sameDate<1;
 			
-			errors.state(request, date, "control.date", "anonymous.message.form.error.dateControl");
+			errors.state(request, date, "rocke.insignia", "anonymous.message.form.error.dateControl");
 		}
         
         
 		
-        if(entity.getControl().getMoney() != null) {
-        	if(entity.getControl().getMoney().getAmount() < 0) {
-        		errors.state(request, false, "control.money", "anonymous.message.form.error.amountControl");
+        if(entity.getRocke().getBudget() != null) {
+        	if(entity.getRocke().getBudget().getAmount() < 0) {
+        		errors.state(request, false, "rocke.budget", "anonymous.message.form.error.amountControl");
         	}
-        	if(!(entity.getControl().getMoney().getCurrency().equals("EUR")) && !(entity.getControl().getMoney().getCurrency().equals("USD"))) {
-        		errors.state(request, false, "control.money", "anonymous.message.form.error.currentControl");
+        	if(!(entity.getRocke().getBudget().getCurrency().equals("EUR")) && !(entity.getRocke().getBudget().getCurrency().equals("USD"))) {
+        		errors.state(request, false, "rocke.budget", "anonymous.message.form.error.currentControl");
         	}
         }
         
@@ -164,8 +164,8 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		
 		Date moment;
 
-		moment = new Date(System.currentTimeMillis() - 1);
-		entity.getControl().setMomento(moment);
+		moment = new Date(System.currentTimeMillis() - 604800000);
+		entity.getRocke().setDeadline(moment);
 		entity.setMoment(moment);
 		this.repository.save(entity);
 	}

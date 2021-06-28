@@ -69,22 +69,22 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 //	//ControlCheck
 	
-	@Query("select 1.0 * count(cr) from ControlCheck cr  where cr.isCheck= 1") 
+	@Query("select 1.0 * count(cr) from Rocke cr  where cr.important= 1") 
 	Double numberShoutsCheckTrue();
 		
-	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where a.control.isCheck = 1")	
+	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where a.rocke.important = 1")	
 	Double ratioCheckTrue();
 
-	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where a.control.isCheck = 0")
+	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where a.rocke.important = 0")
 	Double ratioCheckFalse();
 
-	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where year(a.control.date) = 2021")
+	@Query("select 1.0 * count(s) from Shout s where s.rocke.budget.amount = 0.00")
 	Double ratioOfShoutsYear2020();
 
-	@Query("select avg(cr.money.amount) from ControlCheck cr group by cr.money.currency")
+	@Query("select avg(cr.budget.amount) from Rocke cr group by cr.budget.currency")
 	List<Double> averageMoneyCureency();
 
-	@Query("select stddev(cr.money.amount) from ControlCheck cr group by cr.money.currency")
+	@Query("select stddev(cr.budget.amount) from Rocke cr group by cr.budget.currency")
 	List<Double> deviationMoneyCurrency();
 		
 		

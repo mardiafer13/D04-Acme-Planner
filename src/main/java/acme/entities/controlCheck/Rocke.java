@@ -31,7 +31,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class ControlCheck extends DomainEntity {
+public class Rocke extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -41,23 +41,23 @@ public class ControlCheck extends DomainEntity {
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				momento;
+	protected Date				deadline;
 	
 	@Column(unique=true)
 	@NotNull
 	@Pattern(regexp = "([12]\\d{3}/(0[1-9]|1[0-2])/(0[1-9]|[12]\\d|3[01]))")//yyyy/MM/dd
-	protected String			date;
+	protected String			insignia;
 	
 	@NotNull
-	protected Money				money;
+	protected Money				budget;
 
 	@NotNull
-	protected Boolean       	isCheck;
+	protected Boolean       	important;
 
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-	@OneToOne(mappedBy = "control")
+	@OneToOne(mappedBy = "rocke")
 	protected Shout shout;
 }

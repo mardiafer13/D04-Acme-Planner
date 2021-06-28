@@ -11,9 +11,9 @@
 anonymous.shout.form.label.author = Autor:
 anonymous.shout.form.label.text = Texto:
 anonymous.shout.form.label.text = Información:
-anonymous.shout.form.label.date = Fecha:
-anonymous.shout.form.label.money = Dinero:
-anonymous.shout.form.label.isCheck = Check:
+anonymous.shout.form.label.date = Insignia:
+anonymous.shout.form.label.money = Presupuesto:
+anonymous.shout.form.label.isCheck = Importante:
 anonymous.shout.form.button.create = Gritar
 anonymous.shout.form.button.return = Volver
  
@@ -21,9 +21,9 @@ anonymous.shout.list.label.moment = Momento
 anonymous.shout.list.label.author = Autor
 anonymous.shout.list.label.text = Texto
 anonymous.shout.list.label.info = Info
-anonymous.shout.list.label.date = Fecha
-anonymous.shout.list.label.money = Dinero
-anonymous.shout.list.label.isCheck = Check
+anonymous.shout.list.label.date = Insignia
+anonymous.shout.list.label.money = Presupuesto
+anonymous.shout.list.label.isCheck = Importante
 
 anonymous.message.form.error.spam = El texto contiene palabras spam
 anonymous.message.form.error.spam.author = El autor contiene palabras spam

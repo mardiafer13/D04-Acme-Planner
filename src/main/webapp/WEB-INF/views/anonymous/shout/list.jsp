@@ -20,9 +20,9 @@
 	<acme:list-column code="anonymous.shout.list.label.author" path="author" width="20%"/>
 	<acme:list-column code="anonymous.shout.list.label.text" path="text" width="30%"/>
 	<acme:list-column code="anonymous.shout.list.label.info" path="info" width="20%"/>
-	<acme:list-column code="anonymous.shout.list.label.date" path="control.date" width="20%"/>
-	<acme:list-column code="anonymous.shout.list.label.money" path="control.money" width="20%"/>
-	<acme:list-column code="anonymous.shout.list.label.isCheck" path="control.isCheck" width="20%"/>
+	<acme:list-column code="anonymous.shout.list.label.date" path="rocke.insignia" width="20%"/>
+	<acme:list-column code="anonymous.shout.list.label.money" path="rocke.budget" width="20%"/>
+	<acme:list-column code="anonymous.shout.list.label.isCheck" path="rocke.important" width="20%"/>
 </acme:list>
 
 

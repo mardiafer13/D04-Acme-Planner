@@ -41,15 +41,6 @@
 	
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.ratioCheckFalse"/>
-		</th>
-		<td>
-			<acme:print value="${ratioCheckFalse}"/>
-		</td>
-	</tr>
-	
-	<tr>
-		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.averageMoneyCurrent1"/>
 		</th>
 		<td>

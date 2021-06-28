@@ -28,7 +28,7 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.controlCheck.ControlCheck;
+import acme.entities.controlCheck.Rocke;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -62,8 +62,8 @@ public class Shout extends DomainEntity {
 	
 	@Valid
 	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "control_id", referencedColumnName = "id")
-	protected ControlCheck control;
+    @JoinColumn(name = "rockecontrol_id", referencedColumnName = "id")
+	protected Rocke rocke;
 
 	// Derived attributes -----------------------------------------------------
 
