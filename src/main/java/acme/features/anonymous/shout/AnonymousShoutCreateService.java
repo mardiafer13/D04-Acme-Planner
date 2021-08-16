@@ -67,7 +67,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "author", "text", "info", "rocke.insignia", "rocke.budget", "rocke.important");//cambiar adjunto y tmb el view
+		request.unbind(entity, model, "author", "text", "info", "rocke.deadline", "rocke.insignia", "rocke.budget", "rocke.important");//cambiar adjunto y tmb el view
 	}
 
 	@Override
@@ -79,12 +79,12 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		Date moment;
 		Rocke control;
 		
-		moment = new Date(System.currentTimeMillis() - 604800000);
+		moment = new Date(System.currentTimeMillis() - 1);
 
 		control = new Rocke();
 		result = new Shout();
 		
-		control.setDeadline(moment);
+		//control.setDeadline(moment);
 		
 		result.setMoment(moment);
 		result.setRocke(control);
@@ -113,6 +113,13 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
         }
         
 
+        if(!errors.hasErrors("rocke.deadline")){
+        	final Date moment = new Date(System.currentTimeMillis() + 604800000);
+        	if(entity.getRocke().getDeadline().compareTo(moment) <= 0) {
+        		errors.state(request, false, "rocke.deadline","anonymous.message.form.error.deadline");
+        	}
+        }
+        
 
 		if(!errors.hasErrors("rocke.insignia")){
 			//Check if date is current
@@ -144,7 +151,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
         	if(entity.getRocke().getBudget().getAmount() < 0) {
         		errors.state(request, false, "rocke.budget", "anonymous.message.form.error.amountControl");
         	}
-        	if(!(entity.getRocke().getBudget().getCurrency().equals("EUR")) && !(entity.getRocke().getBudget().getCurrency().equals("USD"))) {
+        	if(!(entity.getRocke().getBudget().getCurrency().equals("EUR")) && !(entity.getRocke().getBudget().getCurrency().equals("USD")) && !(entity.getRocke().getBudget().getCurrency().equals("GBP"))) {
         		errors.state(request, false, "rocke.budget", "anonymous.message.form.error.currentControl");
         	}
         }
@@ -165,7 +172,6 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		Date moment;
 
 		moment = new Date(System.currentTimeMillis() - 604800000);
-		entity.getRocke().setDeadline(moment);
 		entity.setMoment(moment);
 		this.repository.save(entity);
 	}

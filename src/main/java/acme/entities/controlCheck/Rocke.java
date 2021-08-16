@@ -17,8 +17,6 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -39,7 +37,8 @@ public class Rocke extends DomainEntity {
 
 	// Attributes -------------------------------------------------------------
 	
-	@Temporal(TemporalType.TIMESTAMP)
+	//@Temporal(TemporalType.TIMESTAMP)
+	//@Future
 	@NotNull
 	protected Date				deadline;
 	
