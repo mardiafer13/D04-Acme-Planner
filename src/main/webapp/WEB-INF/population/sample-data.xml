@@ -40,7 +40,7 @@
 	<bean id="control4" class="acme.entities.controlCheck.Rocke">
 		<property name="insignia" value="2020/06/22"></property>
 		<property name="deadline" value="2020/06/22 19:39"></property>
-		<property name="budget" value="34 USD"></property>
+		<property name="budget" value="34 GBP"></property>
 		<property name="important" value="false"></property>
 	</bean>
 	
@@ -61,7 +61,7 @@
 	<bean id="control7" class="acme.entities.controlCheck.Rocke">
 		<property name="insignia" value="2021/05/23"></property>
 		<property name="deadline" value="2021/05/23 19:39"></property>
-		<property name="budget" value="44 EUR"></property>
+		<property name="budget" value="0 EUR"></property>
 		<property name="important" value="false"></property>
 	</bean>
 

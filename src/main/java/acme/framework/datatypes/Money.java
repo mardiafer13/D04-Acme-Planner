@@ -36,6 +36,7 @@ public class Money extends DomainDatatype {
 	protected Double			amount;
 
 	@NotBlank
+	//@Pattern(regexp = "EUR|USD|GBP")
 	protected String			currency;
 
 	// Object interface -------------------------------------------------------

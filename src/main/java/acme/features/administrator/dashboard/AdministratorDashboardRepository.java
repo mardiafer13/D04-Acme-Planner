@@ -77,9 +77,9 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where a.rocke.important = 0")
 	Double ratioCheckFalse();
-
+	
 	@Query("select 1.0 * count(s) from Shout s where s.rocke.budget.amount = 0.00")
-	Double ratioOfShoutsYear2020();
+	Double ratioOfShoutsZero();
 
 	@Query("select avg(cr.budget.amount) from Rocke cr group by cr.budget.currency")
 	List<Double> averageMoneyCureency();

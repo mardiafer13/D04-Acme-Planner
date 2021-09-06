@@ -57,8 +57,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			"avegageNumberOfApplicationsPerEmployer", "ratioOfPendingApplications", //
 			"ratioOfRejectedApplications", "ratioOfAcceptedApplications", "numberPublicTask", "numberPrivateTask", "numberFinalTask", "numberNoFinalTask", "averageDurationPeriodTasks", "deviationDurationPeriodTasks", "minimumDurationPeriodTasks",
 			"maximumDurationPeriodTasks", "averageWorkloadTasks", "deviationWorkloadTasks", "minimumWorkloadTasks", "maximumWorkloadTasks", 
-			"numberOfCheckTrue", "ratioCheckTrue","ratioCheckFalse", "averageMoneyCurrent1", "averageMoneyCurrent2",
-			"deviationMoneyCurrent1", "deviationMoneyCurrent2");
+			"numberOfCheckTrue", "ratioCheckTrue","ratioCheckFalse", "averageMoneyCurrent1", "averageMoneyCurrent2", "averageMoneyCurrent3",
+			"deviationMoneyCurrent1", "deviationMoneyCurrent2", "deviationMoneyCurrent3");
 	}
 
 	@Override
@@ -95,35 +95,51 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Double ratioCheckFalse;
 		Double averageMoneyCurrent1;
 		Double averageMoneyCurrent2;
+		final Double averageMoneyCurrent3;
 		Double deviationMoneyCurrent1;
 		Double deviationMoneyCurrent2;
+		final Double deviationMoneyCurrent3;
 
 		numberOfCheckTrue = this.repository.numberShoutsCheckTrue();
-		ratioCheckTrue = this.repository.ratioOfShoutsYear2020();
+		ratioCheckTrue = this.repository.ratioOfShoutsZero();
 		//ratioCheckFalse = this.repository.ratioCheckFalse();
 		final List<Double> averageShoutMoney = this.repository.averageMoneyCureency();
 		final List<Double> deviationShoutMoney = this.repository.deviationMoneyCurrency();
 				
-		if(averageShoutMoney.size()==2) {
+		if(averageShoutMoney.size()==3) {
 		 	averageMoneyCurrent1 = averageShoutMoney.get(0);
-		 	averageMoneyCurrent2 = averageShoutMoney.get(1);
-		    } else if(averageShoutMoney.size()<=1 && averageShoutMoney.size()>0) {
+		 	averageMoneyCurrent2 = averageShoutMoney.get(2);
+		 	averageMoneyCurrent3 = averageShoutMoney.get(1);
+		    }else if(averageShoutMoney.size()<=1 && averageShoutMoney.size()>0) {
 		     	averageMoneyCurrent1 = averageShoutMoney.get(0);
 		       	averageMoneyCurrent2 = 0.0;
-			} else {
-			    averageMoneyCurrent1 = 0.0;
+		       	averageMoneyCurrent3 = 0.0;
+			}else if(averageShoutMoney.size()<=2 && averageShoutMoney.size()>0){
+			    averageMoneyCurrent1 = averageShoutMoney.get(0);
+			    averageMoneyCurrent2 = averageShoutMoney.get(2);
+			    averageMoneyCurrent3 = 0.0;
+			}else {
+				averageMoneyCurrent1 = 0.0;
 			    averageMoneyCurrent2 = 0.0;
+			    averageMoneyCurrent3 = 0.0;
 			}
 
-		if(deviationShoutMoney.size()==2) {
+		if(deviationShoutMoney.size()==3) {
 			deviationMoneyCurrent1 = deviationShoutMoney.get(0);
-			deviationMoneyCurrent2 = deviationShoutMoney.get(1);
+			deviationMoneyCurrent2 = deviationShoutMoney.get(2);
+			deviationMoneyCurrent3 = deviationShoutMoney.get(1);
 		} else if(deviationShoutMoney.size()<=1 && deviationShoutMoney.size()>0) {
 			deviationMoneyCurrent1 = deviationShoutMoney.get(0);
 			deviationMoneyCurrent2 = 0.0;
-		} else {
+			deviationMoneyCurrent3 = 0.0;
+		}else if(deviationShoutMoney.size()<=2 && deviationShoutMoney.size()>0) {
+			deviationMoneyCurrent1 = deviationShoutMoney.get(0);
+			deviationMoneyCurrent2 = deviationShoutMoney.get(2);
+			deviationMoneyCurrent3 = 0.0; 
+		}else {
 			deviationMoneyCurrent1 = 0.0;
 			deviationMoneyCurrent2 = 0.0;
+			deviationMoneyCurrent3 = 0.0;
 		}
 
 
@@ -213,8 +229,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		//result.setRatioCheckFalse(ratioCheckFalse);
 		result.setAverageMoneyCurrent1(averageMoneyCurrent1);
         result.setAverageMoneyCurrent2(averageMoneyCurrent2);
+        result.setAverageMoneyCurrent3(averageMoneyCurrent3);
         result.setDeviationMoneyCurrent1(deviationMoneyCurrent1);
         result.setDeviationMoneyCurrent2(deviationMoneyCurrent2);
+        result.setDeviationMoneyCurrent3(deviationMoneyCurrent3);
 		//Fin parte examen
         
         

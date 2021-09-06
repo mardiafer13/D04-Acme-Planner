@@ -54,9 +54,10 @@ public class Dashboard implements Serializable {
 	Double						ratioCheckFalse;
 	Double						averageMoneyCurrent1;
 	Double						averageMoneyCurrent2;
+	Double						averageMoneyCurrent3;
 	Double						deviationMoneyCurrent1;
 	Double						deviationMoneyCurrent2;
-	
+	Double						deviationMoneyCurrent3;
 
 	// Derived attributes -----------------------------------------------------
 

@@ -19,8 +19,10 @@ administrator.dashboard.form.label.numberOfCheckTrue = Number of True Check
 administrator.dashboard.form.label.ratioCheckTrue = Ratio of Amount 0
 administrator.dashboard.form.label.averageMoneyCurrent1 = Average of Euros
 administrator.dashboard.form.label.averageMoneyCurrent2 = Average of Dollars
+administrator.dashboard.form.label.averageMoneyCurrent3 = Average of GBP
 administrator.dashboard.form.label.deviationMoneyCurrent1 = Deviation of Euros
 administrator.dashboard.form.label.deviationMoneyCurrent2 = Deviation of Dollar
+administrator.dashboard.form.label.deviationMoneyCurrent3 = Deviation of GBP
 
 administrator.dashboard.form.label.number-public-task =  number of public tasks
 administrator.dashboard.form.label.number-private-task =  number of private tasks

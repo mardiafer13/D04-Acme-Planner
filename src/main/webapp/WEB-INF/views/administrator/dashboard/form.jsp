@@ -56,6 +56,14 @@
 			<acme:print value="${averageMoneyCurrent2}"/>
 		</td>
 	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.averageMoneyCurrent3"/>
+		</th>
+		<td>
+			<acme:print value="${averageMoneyCurrent3}"/>
+		</td>
+	</tr>
 	
 	<tr>
 		<th scope="row">
@@ -72,6 +80,15 @@
 		</th>
 		<td>
 			<acme:print value="${deviationMoneyCurrent2}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviationMoneyCurrent3"/>
+		</th>
+		<td>
+			<acme:print value="${deviationMoneyCurrent3}"/>
 		</td>
 	</tr>
 
