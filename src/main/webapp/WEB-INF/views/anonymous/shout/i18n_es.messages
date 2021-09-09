@@ -35,3 +35,4 @@ anonymous.message.form.error.amountControl = La cantidad de dinero debe ser posi
 anonymous.message.form.error.dateControl = La fecha debe ser unica
 anonymous.shout.control.date.currentDate = La fecha debe ser igual que el dia de hoy
 anonymous.message.form.error.deadline = La fecha limite debe ser posterior a la creacion del grito
+anonymous.message.error.insignia.xxxx = La fecha debe tener 15 dias de diferencia

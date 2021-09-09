@@ -35,3 +35,4 @@ anonymous.message.form.error.amountControl = The amount must be positive
 anonymous.message.form.error.dateControl = The date must be unique
 anonymous.shout.control.date.currentDate = The date must be the same as today
 anonymous.message.form.error.deadline = The deadline must be at least one week after the moment when the shout is created
+anonymous.message.error.insignia.xxxx = The date must be 15 days before at the current day

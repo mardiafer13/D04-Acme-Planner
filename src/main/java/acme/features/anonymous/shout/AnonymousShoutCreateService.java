@@ -146,7 +146,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			moment = LocalDate.now().toString().split("-");
 			final String p = entity.getRocke().getInsignia();
 			final Boolean b= p.matches("^\\w{6}:"+moment[0].substring(2)+moment[1]+":"+moment[2]+"$");
-			errors.state(request, b, "mailams.keylem", "anonymous.shout.error.xxx.x1.pattern");
+			errors.state(request, b, "rocke.insignia", "anonymous.message.error.insignia.xxxx");
 			
 			
 			
