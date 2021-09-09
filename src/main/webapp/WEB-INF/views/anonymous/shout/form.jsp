@@ -20,7 +20,7 @@
 	<acme:form-textarea code="anonymous.shout.form.label.text" path="text"/>
 	<acme:form-textbox code="anonymous.shout.form.label.info" path="info"/>
 	<acme:form-moment code="anonymous.shout.form.label.deadline" path="rocke.deadline"/>
-	<acme:form-moment code="anonymous.shout.form.label.date" path="rocke.insignia"/>
+	<acme:form-pattern code="anonymous.shout.form.label.date" path="rocke.insignia"/>
 	<acme:form-money code="anonymous.shout.form.label.money" path="rocke.budget"/>
 	<acme:form-checkbox code="anonymous.shout.form.label.isCheck" path="rocke.important"/>
 	

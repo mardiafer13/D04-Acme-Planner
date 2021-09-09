@@ -7,7 +7,7 @@
       <x>1377</x>
       <y>603</y>
       <w>315</w>
-      <h>315</h>
+      <h>333</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 Dashboard
@@ -25,12 +25,13 @@ Dashboard
 + minimumWorkloadTasks: Double
 + maximumWorkloadTasks: Double
 + numberOfCheckTrue: Double						
-+ ratioCheckTrue: Double
-+ ratioCheckFalse: Double
++ ratioCheckPublic: Double
 + averageMoneyCurrent1: Double
 + averageMoneyCurrent2: Double
++ averageMoneyCurrent3: Double
 + deviationMoneyCurrent1: Double
 + deviationMoneyCurrent2: Double
++ deviationMoneyCurrent3: Double
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -469,12 +470,12 @@ bg=white</panel_attributes>
       <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-ControlCheck
+Rocke
 --
-+ moment: Date{NotNull, Temporal(TIMESTAMP)}
-+ date: String{NotNull,Unique=true, pattern = ([12]\\d{3}/(0[1-9]|1[0-2])/(0[1-9]|[12]\\d|3[01]))}
-+ money: Money{NotNull}
-+ isCheck: Boolean{NotNull}</panel_attributes>
++ deadline: Date{NotNull, Temporal(TIMESTAMP)}
++ insignia: String{NotNull,Unique=true, pattern = ([12]\\d{3}/(0[1-9]|1[0-2])/(0[1-9]|[12]\\d|3[01]))}
++ budget: Money{NotNull}
++ important: Boolean{NotNull}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
