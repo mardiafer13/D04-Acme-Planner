@@ -1,2 +1,0 @@
-timestamp,test-class,test-method,time,description,result
-2021-06-09 10:15:06.939,acme.testing.administrator.controlCheck.AdministratorShowDashboardTest,administratoDashboardPositive,4100,"administratoDashboardPositive()",OK

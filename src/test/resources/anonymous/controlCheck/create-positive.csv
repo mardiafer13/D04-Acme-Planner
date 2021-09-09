@@ -1,2 +1,2 @@
-recordIndex,author,text,info,date,money,isCheck
-7,Jon Doe,Hello world,https://universidad.com,2021/06/09,EUR 25.00,true
+recordIndex,author,text,info,money,isCheck
+7,Jon Doe,Hello world,https://universidad.com,EUR 25.00,true

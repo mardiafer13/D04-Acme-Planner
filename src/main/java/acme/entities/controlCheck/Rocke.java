@@ -44,7 +44,8 @@ public class Rocke extends DomainEntity {
 	
 	@Column(unique=true)
 	@NotNull
-	@Pattern(regexp = "([12]\\d{3}/(0[1-9]|1[0-2])/(0[1-9]|[12]\\d|3[01]))")//yyyy/MM/dd
+	//@Pattern(regexp = "([12]\\d{3}/(0[1-9]|1[0-2])/(0[1-9]|[12]\\d|3[01]))")//yyyy/MM/dd
+	@Pattern(regexp = "^\\w{6}\\:\\d{4}\\:\\d{2}$", message = "default.error.conversion")
 	protected String			insignia;
 	
 	@NotNull

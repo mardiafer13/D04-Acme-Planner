@@ -13,7 +13,6 @@
 package acme.features.anonymous.shout;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -129,20 +128,34 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			//final LocalDate sheetDate = entity.getSheet().getInfoDate();
 			
 			//INFODATE IS STRING
-			final String controlDateString = entity.getRocke().getInsignia();
-			final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-            final LocalDate controlDate = LocalDate.parse(controlDateString, dtf);
-            
-            //Get current date as LocalDate
-			final LocalDate today = LocalDate.now();
+//			final String controlDateString = entity.getRocke().getInsignia();
+//			final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+//            final LocalDate controlDate = LocalDate.parse(controlDateString, dtf);
+//            
+//            //Get current date as LocalDate
+//			final LocalDate today = LocalDate.now();
+//			
+//			errors.state(request, controlDate.isEqual(today), "rocke.insignia", "anonymous.shout.control.date.currentDate");
+//			
+//			//Check if date is unique
+//	        final Integer sameDate = this.repository.totalControlDates(entity.getRocke().getInsignia());
+//	        final Boolean date = sameDate<1;
+//			
+//			errors.state(request, date, "rocke.insignia", "anonymous.message.form.error.dateControl");
+			String [] moment;
+			moment = LocalDate.now().toString().split("-");
+			final String p = entity.getRocke().getInsignia();
+			final Boolean b= p.matches("^\\w{6}:"+moment[0].substring(2)+moment[1]+":"+moment[2]+"$");
+			errors.state(request, b, "mailams.keylem", "anonymous.shout.error.xxx.x1.pattern");
 			
-			errors.state(request, controlDate.isEqual(today), "rocke.insignia", "anonymous.shout.control.date.currentDate");
 			
-			//Check if date is unique
-	        final Integer sameDate = this.repository.totalControlDates(entity.getRocke().getInsignia());
+			
+			final Integer sameDate = this.repository.totalControlDates(entity.getRocke().getInsignia());
 	        final Boolean date = sameDate<1;
-			
 			errors.state(request, date, "rocke.insignia", "anonymous.message.form.error.dateControl");
+			
+//			final Shout existing = this.repository.findOneShoutByKeylem(entity.getRocke().getInsignia());
+//			errors.state(request, existing==null, "mailams.keylem", "anonymous.shout.error.xxx.x1.repeat");
 		}
         
         

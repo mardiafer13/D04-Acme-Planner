@@ -1,4 +1,4 @@
-package acme.testing.anonymous.controlCheck;
+package acme.testing.controlCheck;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,4 +1,0 @@
-timestamp,test-class,test-method,time,description,result
-2021-06-08 22:44:20.136,acme.testing.administrator.controlCheck.AdministratorShowDashboardTest,managerDashboardNegative,4740,"[1] user=manager1, password=manager1",OK
-2021-06-08 22:44:24.597,acme.testing.administrator.controlCheck.AdministratorShowDashboardTest,managerDashboardNegative,4114,"[2] user=employer1, password=employer1",OK
-2021-06-08 22:44:29.024,acme.testing.administrator.controlCheck.AdministratorShowDashboardTest,administratoDashboardPositive,4096,"administratoDashboardPositive()",OK

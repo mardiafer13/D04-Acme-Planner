@@ -1,5 +1,5 @@
 
-package acme.testing.administrator.controlCheck;
+package acme.testing.controlCheck;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
